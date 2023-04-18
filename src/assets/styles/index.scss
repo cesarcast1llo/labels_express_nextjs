@@ -1,0 +1,378 @@
+$breakpoint-smallTablet: 600px;
+$breakpoint-mobile: 480px;
+$breakpoint-smallMobile: 375px;
+$secondaryColor: #1f1e2c;
+$tertaryColor: #195df0;
+
+// h2 text
+h2 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #feffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+
+    @media (min-width: $breakpoint-mobile) {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    sup {
+        font-size: 11px;
+    }
+}
+// p text
+p {
+    color: silver;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    margin: 0;
+    @media (min-width: $breakpoint-mobile) {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+// label
+label {
+    color: silver;
+    font-size: 14px;
+    line-height: 18px;
+}
+// input
+input {
+    display: block;
+    width: 96%;
+    margin: 5px 0 10px;
+    border-radius: 5px;
+    padding: 5px 3px;
+    border: 0;
+    @media (min-width: $breakpoint-mobile) {
+        width: 98%;
+    }
+}
+
+.show-sm {
+    display: block !important;
+
+    @media (min-width: $breakpoint-smallMobile) {
+        display: none !important;
+    }
+}
+.hide {
+    display: none !important;
+
+    @media (min-width: $breakpoint-smallTablet) {
+        display: block !important;
+    }
+}
+
+.hideFlex {
+    display: none !important;
+
+    @media (min-width: $breakpoint-smallTablet) {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: $secondaryColor;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
+
+    .Home {
+        text-align: center;
+        margin: 0 auto;
+        vertical-align: middle;
+        max-width: 800px;
+        background-color: $secondaryColor;
+        padding: 5%;
+
+        // Menu
+        .Menu {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-around;
+
+            .option {
+                font-weight: 700;
+                letter-spacing: 0.05px;
+                text-decoration: underline;
+                @extend p;
+            }
+        }
+
+        .wrapper {
+            border: 1px solid $tertaryColor;
+            border-radius: 5px;
+            padding: 5% 0;
+
+            // slider mobile sass
+            .labelOptions {
+                display: block;
+                padding: 10px 20px 0;
+
+                @media (min-width: $breakpoint-smallTablet) {
+                    padding: 30px 30px 0;
+                }
+
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 60px;
+                    height: 34px;
+                    margin-bottom: 25px;
+
+                    input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                    }
+
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: #ccc;
+                        -webkit-transition: 0.4s;
+                        transition: 0.4s;
+                    }
+
+                    .slider:before {
+                        position: absolute;
+                        content: '';
+                        height: 26px;
+                        width: 26px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: white;
+                        -webkit-transition: 0.4s;
+                        transition: 0.4s;
+                    }
+
+                    input:checked + .slider {
+                        background-color: #2196f3;
+                    }
+
+                    input:focus + .slider {
+                        box-shadow: 0 0 10px #2196f3;
+                    }
+
+                    input:checked + .slider:before {
+                        -webkit-transform: translateX(26px);
+                        -ms-transform: translateX(26px);
+                        transform: translateX(26px);
+                    }
+
+                    .slider.round {
+                        border-radius: 34px;
+                    }
+
+                    .slider.round:before {
+                        border-radius: 50%;
+                    }
+                }
+
+                img {
+                    padding-bottom: 25px;
+                    margin: 0 auto;
+                }
+
+                .usps {
+                    @extend .usps;
+                }
+
+                .priorityMail,
+                .prioritySignature,
+                .firstClass,
+                .upsGround,
+                .upsNextDay,
+                .upsSecondDay {
+                    padding-bottom: 15px;
+                }
+
+                .subhead {
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+
+                .priceWrapper {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .price {
+                        padding-bottom: 5px;
+                    }
+
+                    .price:last-child {
+                        font-style: italic;
+                    }
+                }
+
+                @media (min-width: $breakpoint-smallTablet) {
+                    display: none;
+                }
+            }
+
+            // desktop sass
+
+            .prices {
+                display: none;
+
+                @media (min-width: $breakpoint-smallTablet) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .uspsLogo,
+                .upsLogo {
+                    margin: 0 auto;
+                    padding-bottom: 15px;
+                }
+
+                .usps,
+                .ups {
+                    display: block;
+                    padding: 0 30px;
+                    margin: 0 auto;
+
+                    @media (min-width: $breakpoint-smallTablet) {
+                        width: 50%;
+                    }
+
+                    .priorityMail,
+                    .prioritySignature,
+                    .firstClass,
+                    .upsGround,
+                    .upsNextDay,
+                    .upsSecondDay {
+                        padding-bottom: 15px;
+                    }
+
+                    .subhead {
+                        text-align: center;
+                        padding-bottom: 10px;
+                    }
+
+                    .priceWrapper {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .price {
+                            padding-bottom: 5px;
+                        }
+
+                        .price:last-child {
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+
+            .labelWrap {
+                padding: 30px 20px 0;
+
+                @media (min-width: $breakpoint-smallTablet) {
+                    padding: 30px 30px 0;
+                }
+
+                .toggleBtn {
+                    width: 100%;
+                    background-color: $tertaryColor;
+                    color: #feffff;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    font-size: 18px;
+                    line-height: 22px;
+                    border-radius: 8px;
+                    border: 0;
+                    cursor: pointer;
+                }
+            }
+            .contactForm {
+                .onCompleteApi {
+                    input {
+                        box-sizing: 'border-box';
+                        border: '1px solid transparent';
+                        width: '240px';
+                        height: '32px';
+                        padding: '0 12px';
+                        border-radius: '3px';
+                        box-shadow: '0 2px 6px rgba(0; 0; 0; 0.3)';
+                        font-size: '14px';
+                        outline: 'none';
+                        text-overflow: 'ellipses';
+                    }
+                }
+
+                .labelInfo {
+                    padding-top: 25px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .sender,
+                    .receiver {
+                        text-align: left;
+                        width: 48%;
+                    }
+
+                    .sender {
+                        padding-right: 5%;
+                    }
+                }
+
+                .upsOrUsps {
+                    padding-top: 15px;
+                    width: 100%;
+
+                    .upsLabel {
+                        display: inline-block;
+                        padding: 0 10px 5px;
+                    }
+
+                    .upsCheckbox {
+                        display: inline-block;
+                        width: 20px;
+                    }
+
+                    .upsLabelDimensions {
+                        .upsDimensionsLabel {
+                            display: block;
+                            padding-bottom: 5px;
+                        }
+
+                        .upsInput {
+                            margin: 5px 0 0;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .labelContact {
+                    padding-top: 15px;
+
+                    label {
+                        padding-bottom: 5px;
+                    }
+                }
+
+                button {
+                    @extend .toggleBtn;
+                    margin-top: 15px;
+                    color: red;
+                }
+            }
+        }
+    }
+}
