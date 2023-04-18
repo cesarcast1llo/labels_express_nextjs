@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Form from '@/components/Form';
-import Menu from './Menu';
+import Menu from '@/components/Menu';
 import Prices from '@/components/Prices';
 
 export default function Home() {

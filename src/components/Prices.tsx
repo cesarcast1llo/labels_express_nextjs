@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import UPS from '../assets/images/ups.svg';
-import USPS from '../assets/images/usps.svg';
+import UPS from './UPS';
+import USPS from './USPS';
+import Image from 'next/image';
 import UPSImg from '../assets/images/ups.svg';
 import USPSImg from '../assets/images/usps.svg';
 
-const USPSimage = <img alt="USPS" className="uspsLogo" src={USPSImg} style={{ width: 150, display: 'block' }} />;
-const UPSimage = <img alt="UPS" className="upsLogo" src={UPSImg} style={{ width: 45, display: 'block' }} />;
+const USPSimage = <Image alt="USPS" className="uspsLogo" src={USPSImg} style={{ width: 150, display: 'block', height: 'auto' }} />;
+const UPSimage = <Image alt="UPS" className="upsLogo" src={UPSImg} style={{ width: 45, display: 'block', height: 'auto' }} />;
 
 const LabelSlider = () => {
     const [isChecked, setIsChecked] = useState(false);
@@ -21,9 +22,7 @@ const LabelSlider = () => {
                 <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} />
                 <span className="slider round"></span>
             </label>
-            <div
-            // htmlFor="toggle-checkbox"
-            >
+            <div id="toggle-checkbox">
                 {isChecked ? UPSimage : USPSimage}
                 {isChecked ? <UPS /> : <USPS />}
             </div>

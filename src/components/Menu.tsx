@@ -1,6 +1,11 @@
 import React from 'react';
 
-function Menu({ firstPage, secondPage }) {
+type MenuProps = {
+    firstPage: string;
+    secondPage: string;
+};
+
+const Menu: React.FC<MenuProps> = ({ firstPage, secondPage }) => {
     return (
         <div className="Menu">
             <a className="option" href={`/google}`}>
@@ -11,6 +16,6 @@ function Menu({ firstPage, secondPage }) {
             </a>
         </div>
     );
-}
+};
 
 export default Menu;
