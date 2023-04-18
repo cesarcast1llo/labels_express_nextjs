@@ -44,9 +44,6 @@ const Contact = () => {
         event.target.reset();
     };
 
-    const testing = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    console.log(`${testing} + testg`);
-
     return (
         <form ref={form} onSubmit={sendEmail}>
             <div className="labelInfo">
