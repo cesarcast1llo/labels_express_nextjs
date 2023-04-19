@@ -115,6 +115,8 @@ body {
             border-radius: 5px;
             padding: 5% 0;
 
+            @import 'payment';
+
             // slider mobile sass
             .labelOptions {
                 display: block;

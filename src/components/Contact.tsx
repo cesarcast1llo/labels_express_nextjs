@@ -38,7 +38,7 @@ const Contact = () => {
         emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
             (result) => {
                 console.log(result.text);
-                router.push('/payment');
+                router.push('/Payment');
             },
             (error) => {
                 console.log(error.text);
@@ -110,6 +110,10 @@ const Contact = () => {
                 </div>
             </div>
             <div className="labelContact">
+                <label htmlFor="email">
+                    <p>Weight:</p>
+                </label>
+                <input type="text" name="weight" className="emailContactInput" placeholder="Weight in pounds" required />
                 <label htmlFor="email">
                     <p>Provide email or phone number to&nbsp;deliver&nbsp;label:</p>
                 </label>
