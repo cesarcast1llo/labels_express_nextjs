@@ -4,8 +4,7 @@ import AutoCompleteInput from './AutoCompleteInput';
 
 const Contact = () => {
     const [isToggled, setIsToggled] = useState(false);
-
-    const upsCheck = useRef();
+    const upsCheck = useRef<HTMLDivElement>(null);
 
     const toggle = () => {
         setIsToggled(!isToggled);
@@ -14,25 +13,27 @@ const Contact = () => {
     const handleToggle = () => {
         const content = upsCheck.current;
 
-        if (content) {
+        if (content !== null) {
+            const element = content as HTMLElement;
+
             if (isToggled) {
-                content.style.transition = 'transform .5s ease-out';
-                content.style.transform = 'scaleY(0)';
+                element.style.transition = 'transform .5s ease-out';
+                element.style.transform = 'scaleY(0)';
             } else {
-                content.style.transition = 'transform 0.5s ease-out';
-                content.style.transform = 'scaleY(1)';
+                element.style.transition = 'transform 0.5s ease-out';
+                element.style.transform = 'scaleY(1)';
             }
         }
 
         toggle();
     };
 
-    const form = useRef(null);
+    const form = useRef<HTMLFormElement>(null);
 
-    const sendEmail = (event: { preventDefault: () => void; target: { reset: () => void } }) => {
+    const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY).then(
+        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
             (result) => {
                 console.log(result.text);
             },
@@ -41,7 +42,7 @@ const Contact = () => {
             }
         );
 
-        event.target.reset();
+        event.currentTarget.reset();
     };
 
     return (
