@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "watch": "nodemon --watch 'src/assets/styles/index.scss' --exec 'npm run build && npm run dev'",
+    "sass-build": "sass src/assets/styles/index.scss public/styles/index.css --style compressed",
+    "dev-watch": "nodemon --watch 'src/assets/styles/index.scss' --exec 'npm run sass-build && npm run dev'",
     "dev": "next dev",
-    "build": "sass src/assets/styles/index.scss public/styles/index.css --style compressed",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
