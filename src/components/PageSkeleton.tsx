@@ -2,11 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import Menu from '@/components/Menu';
 
-interface Props {
+type PageSkeletonProps = React.PropsWithChildren<{
     children: React.ReactNode;
-}
+    firstPage: string;
+    secondPage: string;
+}>;
 
-const PageSkeleton: React.FC<Props> = ({ children }) => {
+const PageSkeleton: React.FC<PageSkeletonProps> = ({ children, firstPage, secondPage }) => {
     return (
         <>
             <Head>
@@ -17,7 +19,7 @@ const PageSkeleton: React.FC<Props> = ({ children }) => {
             </Head>
             <div className="labelsExpress">
                 <div className="wrapper">
-                    <Menu firstPage={'FAQ'} secondPage={'Payment'} />
+                    <Menu firstPage={firstPage} secondPage={secondPage} />
                     {children}
                 </div>
             </div>

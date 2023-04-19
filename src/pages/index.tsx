@@ -5,7 +5,7 @@ import PageSkeleton from '@/components/PageSkeleton';
 
 export default function Home() {
     return (
-        <PageSkeleton>
+        <PageSkeleton firstPage="Payment" secondPage="FAQ">
             <Prices />
             <Form />
         </PageSkeleton>

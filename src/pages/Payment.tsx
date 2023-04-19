@@ -1,12 +1,11 @@
 import React from 'react';
-import Menu from '../components/Menu';
+import PageSkeleton from '@/components/PageSkeleton';
 
 function Payment(): JSX.Element {
     return (
-        <div className="App">
-            <Menu firstPage={'/'} secondPage={'/FAQ'} />
-            <div className="wrapper">Payment</div>
-        </div>
+        <PageSkeleton firstPage="Home" secondPage="FAQ">
+            Payment
+        </PageSkeleton>
     );
 }
 

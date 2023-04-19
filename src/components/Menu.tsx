@@ -6,12 +6,19 @@ type MenuProps = {
 };
 
 const Menu: React.FC<MenuProps> = ({ firstPage, secondPage }) => {
+    const checkForHome = (page: string): string => {
+        if (page.toLowerCase() === 'home') {
+            return '/';
+        }
+        return `/${page}`;
+    };
+
     return (
         <div className="Menu">
-            <a className="option" href={`/${firstPage}`}>
+            <a className="option" href={checkForHome(firstPage)}>
                 {firstPage}
             </a>
-            <a className="option" href={`/${secondPage}`}>
+            <a className="option" href={checkForHome(secondPage)}>
                 {secondPage}
             </a>
         </div>
