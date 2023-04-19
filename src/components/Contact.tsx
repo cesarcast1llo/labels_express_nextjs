@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
+import { useRouter } from 'next/router';
 import AutoCompleteInput from './AutoCompleteInput';
 
 const Contact = () => {
     const [isToggled, setIsToggled] = useState(false);
     const upsCheck = useRef<HTMLDivElement>(null);
+    const router = useRouter();
 
     const toggle = () => {
         setIsToggled(!isToggled);
@@ -36,6 +38,7 @@ const Contact = () => {
         emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
             (result) => {
                 console.log(result.text);
+                router.push('/payment');
             },
             (error) => {
                 console.log(error.text);
@@ -110,7 +113,7 @@ const Contact = () => {
                 <label htmlFor="email">
                     <p>Provide email or phone number to&nbsp;deliver&nbsp;label:</p>
                 </label>
-                <input type="text" name="emailOrPhone" className="emailContactInput" placeholder="Email or Phone Number" />
+                <input type="text" name="emailOrPhone" className="emailContactInput" placeholder="Email or Phone Number" required />
             </div>
             <button className="toggleBtn" type="submit">
                 Send Label Details

@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "watch": "nodemon --watch 'src/assets/styles/index.scss' --exec 'npm run build && npm run dev'",
     "dev": "next dev",
-    "build": "next build",
+    "build": "sass src/assets/styles/index.scss public/styles/index.css --style compressed",
     "start": "next start",
     "lint": "next lint"
   },
@@ -22,5 +23,9 @@
     "react-dom": "18.2.0",
     "sass": "^1.62.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.3",
+    "nodemon": "^2.0.22"
   }
 }
