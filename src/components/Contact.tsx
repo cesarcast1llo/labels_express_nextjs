@@ -46,7 +46,7 @@ const Contact = () => {
     };
 
     return (
-        <form ref={form} onSubmit={sendEmail}>
+        <form ref={form} onSubmit={sendEmail} className="form">
             <div className="labelInfo">
                 <div className="sender">
                     <label htmlFor="sender_name">

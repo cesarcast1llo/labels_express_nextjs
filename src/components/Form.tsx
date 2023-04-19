@@ -1,15 +1,15 @@
 import React, { useState, useRef } from 'react';
 import Contact from './Contact';
 
-function Form() {
+function Form(): JSX.Element {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const contactForm = useRef<HTMLDivElement>(null);
 
-    const toggle = () => {
+    const toggle = (): void => {
         setIsOpen(!isOpen);
     };
 
-    const handleToggle = () => {
+    const handleToggle = (): void => {
         const content = contactForm.current;
         if (content) {
             if (isOpen) {
