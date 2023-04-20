@@ -43,7 +43,7 @@ const Contact = () => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { amount: weight },
+                    query: { weight: weight, isToggled: isToggled },
                 });
             },
             (error) => {
