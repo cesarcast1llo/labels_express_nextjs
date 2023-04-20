@@ -35,10 +35,16 @@ const Contact = () => {
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
+        const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
+        const weight = weightInput.value;
+
         emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
             (result) => {
                 console.log(result.text);
-                router.push('/Payment');
+                router.push({
+                    pathname: '/Payment',
+                    query: { amount: weight },
+                });
             },
             (error) => {
                 console.log(error.text);
