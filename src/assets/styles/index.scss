@@ -98,8 +98,8 @@ body {
         padding: 5%;
 
         // Menu
-        .Menu {
-            padding: 25px 30px;
+        .menu {
+            padding: 40px 30px;
             display: flex;
             justify-content: space-around;
 
@@ -125,7 +125,7 @@ body {
         .wrapper {
             border: 1px solid $tertaryColor;
             border-radius: 5px;
-            padding: 5% 0;
+            padding-bottom: 40px;
 
             @import 'payment';
 
@@ -375,9 +375,36 @@ body {
 
                     .labelContact {
                         padding-top: 15px;
+                    }
 
-                        label {
-                            padding-bottom: 5px;
+                    .weight {
+                        display: block;
+
+                        @media (min-width: $breakpoint-smallTablet) {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+
+                        .weightInput {
+                            display: flex;
+                            justify-content: center;
+
+                            label p {
+                                padding-right: 10px;
+                            }
+
+                            p {
+                                padding: 0 0 0 5px;
+                            }
+
+                            input {
+                                margin: 0;
+                                width: 100px;
+                            }
+                        }
+
+                        .weightInput:first-child {
+                            padding-bottom: 10px;
                         }
                     }
 

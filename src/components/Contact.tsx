@@ -117,15 +117,26 @@ const Contact = () => {
                     )}
                 </div>
             </div>
+            <div className="labelContact weight">
+                <div className="weightInput">
+                    <label htmlFor="weight">
+                        <p>Weight:</p>
+                    </label>
+                    <input type="text" name="weight" placeholder="Whole numbers" required />
+                    <p style={{ display: 'inline-block' }}>lbs</p>
+                </div>
+                <div className="weightInput">
+                    <label htmlFor="price">
+                        <p>Price:</p>
+                    </label>
+                    <input type="number" name="price" placeholder="Price" required />
+                </div>
+            </div>
             <div className="labelContact">
-                <label htmlFor="email">
-                    <p>Weight:</p>
-                </label>
-                <input type="text" name="weight" className="emailContactInput" placeholder="Weight in pounds" required />
                 <label htmlFor="email">
                     <p>Provide email or phone number to&nbsp;deliver&nbsp;label:</p>
                 </label>
-                <input type="text" name="emailOrPhone" className="emailContactInput" placeholder="Email or Phone Number" required />
+                <input type="text" name="emailOrPhone" placeholder="Email or Phone Number" required />
             </div>
             <button className="toggleBtn" type="submit">
                 Send Label Details

@@ -14,7 +14,7 @@ const Menu: React.FC<MenuProps> = ({ firstPage, secondPage }) => {
     };
 
     return (
-        <div className="Menu">
+        <div className="menu">
             <a className="option" href={checkForHome(firstPage)}>
                 {firstPage}
             </a>
