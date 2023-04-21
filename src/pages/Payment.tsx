@@ -20,13 +20,16 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
 
     if (pageWidth > 600) {
         venmoURL = 'https://account.venmo.com/u/Cesar-Castillo';
+        cashappURL = 'https://cash.app/$cc332211';
     } else {
-        venmoURL = `venmo://paycharge?txn=pay&recipients=cesar-castillo&amount=${weight}&note=Thank%20you!`;
+        venmoURL = `venmo://paycharge?txn=pay&recipients=cesar-castillo&amount=${weight}&note=thank%20you`;
+        cashappURL = `cashapp://pay?recipient=cc332211&amount=${weight}&note=thank%20you`;
     }
 
     return (
         <PageSkeleton firstPage="Home" secondPage="FAQ">
             <div className="paymentPage">
+                <div className="flex">Drop down of prices</div>
                 <div className="flex">
                     <div className="border">
                         <h2>Weight:</h2>
