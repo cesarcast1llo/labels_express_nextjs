@@ -23,12 +23,32 @@
 
     .paymentType {
         padding: 15px 0 0;
-        vertical-align: middle;
-        justify-content: space-evenly;
+        display: block;
+
+        @media (min-width: $breakpoint-mobile) {
+            display: flex;
+            vertical-align: middle;
+            justify-content: space-evenly;
+        }
+
+        .payments {
+            padding-bottom: 35px;
+
+            a {
+                text-decoration-color: silver;
+
+                p {
+                    padding: 0;
+                }
+
+                .cashapp {
+                    padding-top: 15px;
+                }
+            }
+        }
     }
 
-    a {
-        font-size: 12px;
-        color: white;
+    p {
+        padding-top: 15px;
     }
 }

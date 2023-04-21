@@ -12,19 +12,19 @@ type PaymentProps = {
 
 const Payment: React.FC<PaymentProps> = ({ recipient }) => {
     const router = useRouter();
-    const weight = '6';
+    // const weight = '6';
+    const weight = router.query.weight as string;
+    const emailOrPhone = router.query.emailOrPhone;
     const ups = router.query.isToggled === 'true';
     const pageWidth = typeof document !== 'undefined' ? document.body.clientWidth : 0;
     let venmoURL;
-    let cashappURL;
 
     if (pageWidth > 600) {
         venmoURL = 'https://account.venmo.com/u/Cesar-Castillo';
-        cashappURL = 'https://cash.app/$cc332211';
     } else {
         venmoURL = `venmo://paycharge?txn=pay&recipients=cesar-castillo&amount=${weight}&note=thank%20you`;
-        cashappURL = `cashapp://pay?recipient=cc332211&amount=${weight}&note=thank%20you`;
     }
+    const cashappURL = `https://cash.me/$cc332211/${weight}/`;
 
     return (
         <PageSkeleton firstPage="Home" secondPage="FAQ">
@@ -37,13 +37,23 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
                     </div>
                 </div>
                 <div className="flex paymentType">
-                    <a href={venmoURL} target="_blank">
-                        <Image alt="Venmo" src={Venmo} style={{ width: 200, display: 'block', height: 'auto', margin: '0 auto' }} priority />
-                    </a>
-                    <a href={cashappURL} target="_blank">
-                        <Image alt="Cashapp" src={Cashapp} style={{ width: 65, display: 'block', height: 'auto', margin: '0 auto' }} priority />
-                    </a>
+                    <div className="payments">
+                        <a href={venmoURL} target="_blank">
+                            <Image alt="Venmo" src={Venmo} style={{ width: 200, display: 'block', height: 'auto', margin: '0 auto' }} priority />
+                            <p>@cesar-castillo</p>
+                        </a>
+                    </div>
+                    <div className="payments">
+                        <a href={cashappURL} target="_blank">
+                            <Image alt="Cashapp" src={Cashapp} style={{ width: 65, display: 'block', height: 'auto', margin: '0 auto' }} priority />
+                            <p className="cashapp">$cc332211</p>
+                        </a>
+                    </div>
                 </div>
+                <p>Once the payment is confirmed, I will deliver your label&nbsp;to:</p>
+                <p>
+                    <i>{emailOrPhone}</i>
+                </p>
             </div>
         </PageSkeleton>
     );

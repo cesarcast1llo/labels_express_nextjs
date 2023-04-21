@@ -36,14 +36,16 @@ const Contact = () => {
         event.preventDefault();
 
         const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
+        const emailOrPhoneInput = form.current?.elements.namedItem('emailOrPhone') as HTMLInputElement;
         const weight = weightInput.value;
+        const emailOrPhone = emailOrPhoneInput.value;
 
         emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
             (result) => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: weight, isToggled: isToggled },
+                    query: { weight: weight, emailOrPhone: emailOrPhone, isToggled: isToggled },
                 });
             },
             (error) => {
