@@ -103,11 +103,22 @@ body {
             display: flex;
             justify-content: space-around;
 
-            .option {
+            a {
                 font-weight: 700;
                 letter-spacing: 0.05px;
-                text-decoration: underline;
+                background-color: transparent;
+                border-radius: 8px;
+                border: 2px solid silver;
+                text-decoration: none;
+                padding: 8px 0;
+                width: 120px;
                 @extend p;
+            }
+
+            a:hover {
+                background-color: $tertaryColor;
+                color: silver;
+                border-color: silver;
             }
         }
 

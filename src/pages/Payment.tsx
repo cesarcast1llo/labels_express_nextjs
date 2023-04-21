@@ -13,7 +13,7 @@ type PaymentProps = {
 const Payment: React.FC<PaymentProps> = ({ recipient }) => {
     const router = useRouter();
     // const weight = '6';
-    const weight = router.query.weight as string;
+    const weight = router.query.weight ?? '';
     const emailOrPhone = router.query.emailOrPhone;
     const ups = router.query.isToggled === 'true';
     const pageWidth = typeof document !== 'undefined' ? document.body.clientWidth : 0;
