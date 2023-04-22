@@ -42,7 +42,7 @@ const USPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>10lbs-30lbs</p>
+                        <p>9lbs-30lbs</p>
                     </div>
                     <div className="price">
                         <p>$11</p>

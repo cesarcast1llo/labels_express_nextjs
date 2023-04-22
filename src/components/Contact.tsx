@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { useRouter } from 'next/router';
 import AutoCompleteInput from './AutoCompleteInput';
 
 const Contact = () => {
     const [isToggled, setIsToggled] = useState(false);
+    const [price, setPrice] = useState('$0');
     const upsCheck = useRef<HTMLDivElement>(null);
     const router = useRouter();
 
@@ -31,6 +32,27 @@ const Contact = () => {
     };
 
     const form = useRef<HTMLFormElement>(null);
+
+    useEffect(() => {
+        const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
+
+        function handleWeightInput() {
+            const weight = parseInt(weightInput.value, 10);
+            let newPrice = '0';
+            if (weight >= 1 && weight <= 8) {
+                newPrice = '5';
+            } else if (weight >= 9 && weight <= 70) {
+                newPrice = `<s>$22</s> $10`;
+            }
+            setPrice(newPrice);
+        }
+
+        weightInput.addEventListener('input', handleWeightInput);
+
+        return () => {
+            weightInput.removeEventListener('input', handleWeightInput);
+        };
+    }, [form]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -123,13 +145,13 @@ const Contact = () => {
                         <p>Weight:</p>
                     </label>
                     <input type="text" name="weight" placeholder="Whole numbers" required />
-                    <p style={{ display: 'inline-block' }}>lbs</p>
+                    <p className="lbs">lbs</p>
                 </div>
                 <div className="weightInput">
                     <label htmlFor="price">
                         <p>Price:</p>
                     </label>
-                    <input type="number" name="price" placeholder="Price" required />
+                    <p dangerouslySetInnerHTML={{ __html: price }}></p>
                 </div>
             </div>
             <div className="labelContact">
