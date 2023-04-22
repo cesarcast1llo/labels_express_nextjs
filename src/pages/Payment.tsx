@@ -12,31 +12,39 @@ type PaymentProps = {
 
 const Payment: React.FC<PaymentProps> = ({ recipient }) => {
     const router = useRouter();
-    // const weight = '6';
+
     const weight = router.query.weight ?? '';
+    const price = router.query.pricePayment ?? '';
     const emailOrPhone = router.query.emailOrPhone;
-    const ups = router.query.isToggled === 'true';
     const pageWidth = typeof document !== 'undefined' ? document.body.clientWidth : 0;
     let venmoURL;
+
+    const priceNoSign = price.slice(1);
 
     if (pageWidth > 600) {
         venmoURL = 'https://account.venmo.com/u/Cesar-Castillo';
     } else {
-        venmoURL = `venmo://paycharge?txn=pay&recipients=cesar-castillo&amount=${weight}&note=thank%20you`;
+        venmoURL = `venmo://paycharge?txn=pay&recipients=cesar-castillo&amount=${priceNoSign}&note=thank%20you`;
     }
-    const cashappURL = `https://cash.me/$cc332211/${weight}/`;
+
+    const cashappURL = `https://cash.me/$cc332211/${priceNoSign}/`;
 
     return (
         <PageSkeleton firstPage="Home" secondPage="FAQ">
             <div className="paymentPage">
                 <div className="flex">Drop down of prices</div>
-                <div className="flex">
-                    <div className="border">
+                <div className="paymentType mobBorder">
+                    <div className="totalPrice">
                         <h2>Weight:</h2>
-                        <input type="number" placeholder={`${weight}`} name="receiver_phone" required />
+                        <p>{weight}&nbsp;lbs</p>
+                    </div>
+                    <div className="totalPrice">
+                        <h2>Price:</h2>
+                        <p dangerouslySetInnerHTML={{ __html: price }}></p>
                     </div>
                 </div>
-                <div className="flex paymentType">
+
+                <div className="paymentType">
                     <div className="payments">
                         <a href={venmoURL} target="_blank">
                             <Image alt="Venmo" src={Venmo} style={{ width: 200, display: 'block', height: 'auto', margin: '0 auto' }} priority />

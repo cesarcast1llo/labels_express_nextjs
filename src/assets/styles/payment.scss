@@ -1,28 +1,7 @@
 .paymentPage {
     padding: 25px 30px;
 
-    .flex {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-
-        .border {
-            border-bottom: 1px solid white;
-            display: flex;
-            justify-content: center;
-
-            h2 {
-                padding-right: 10px;
-            }
-
-            input {
-                width: 50px;
-            }
-        }
-    }
-
     .paymentType {
-        padding: 15px 0 0;
         display: block;
 
         @media (min-width: $breakpoint-mobile) {
@@ -31,8 +10,28 @@
             justify-content: space-evenly;
         }
 
+        .totalPrice {
+            display: block;
+            padding-bottom: 15px;
+
+            @media (min-width: $breakpoint-mobile) {
+                border: 1px solid white;
+                padding: 10px;
+            }
+
+            h2 {
+                padding-right: 10px;
+                display: inline-block;
+            }
+
+            p {
+                padding: 0;
+                display: inline-block;
+            }
+        }
+
         .payments {
-            padding-bottom: 35px;
+            padding: 25px 0 25px;
 
             a {
                 text-decoration-color: silver;
@@ -45,6 +44,15 @@
                     padding-top: 15px;
                 }
             }
+        }
+    }
+
+    .mobBorder {
+        border-bottom: 1px solid white;
+        padding-bottom: 15px;
+
+        @media (min-width: $breakpoint-mobile) {
+            border: none;
         }
     }
 

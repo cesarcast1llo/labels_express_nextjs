@@ -6,6 +6,7 @@ import AutoCompleteInput from './AutoCompleteInput';
 const Contact = () => {
     const [isToggled, setIsToggled] = useState(false);
     const [price, setPrice] = useState('$0');
+    const [crossPrice, setcrossPrice] = useState('');
     const upsCheck = useRef<HTMLDivElement>(null);
     const router = useRouter();
 
@@ -39,11 +40,15 @@ const Contact = () => {
         function handleWeightInput() {
             const weight = parseInt(weightInput.value, 10);
             let newPrice = '0';
+            let crossPrice = '';
             if (weight >= 1 && weight <= 8) {
-                newPrice = '5';
+                crossPrice = `<s>$11</s>`;
+                newPrice = `$5`;
             } else if (weight >= 9 && weight <= 70) {
-                newPrice = `<s>$22</s> $10`;
+                crossPrice = `<s>$22</s>`;
+                newPrice = `$10`;
             }
+            setcrossPrice(crossPrice);
             setPrice(newPrice);
         }
 
@@ -59,15 +64,17 @@ const Contact = () => {
 
         const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
         const emailOrPhoneInput = form.current?.elements.namedItem('emailOrPhone') as HTMLInputElement;
+        const priceInput = document.getElementById('price') as HTMLParagraphElement;
         const weight = weightInput.value;
         const emailOrPhone = emailOrPhoneInput.value;
+        const pricePayment = priceInput.textContent;
 
         emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
             (result) => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: weight, emailOrPhone: emailOrPhone, isToggled: isToggled },
+                    query: { weight: weight, emailOrPhone: emailOrPhone, isToggled: isToggled, pricePayment: pricePayment },
                 });
             },
             (error) => {
@@ -75,12 +82,16 @@ const Contact = () => {
             }
         );
 
+        console.log(pricePayment);
+
         event.currentTarget.reset();
     };
 
+    console.log(price);
+
     return (
         <form ref={form} onSubmit={sendEmail} className="form">
-            <div className="labelInfo">
+            {/* <div className="labelInfo">
                 <div className="sender">
                     <label htmlFor="sender_name">
                         <p>
@@ -138,20 +149,21 @@ const Contact = () => {
                         </div>
                     )}
                 </div>
-            </div>
+            </div> */}
             <div className="labelContact weight">
                 <div className="weightInput">
                     <label htmlFor="weight">
                         <p>Weight:</p>
                     </label>
-                    <input type="text" name="weight" placeholder="Whole numbers" required />
+                    <input type="number" name="weight" placeholder="Whole numbers" required />
                     <p className="lbs">lbs</p>
                 </div>
                 <div className="weightInput">
                     <label htmlFor="price">
                         <p>Price:</p>
                     </label>
-                    <p dangerouslySetInnerHTML={{ __html: price }}></p>
+                    <p dangerouslySetInnerHTML={{ __html: crossPrice }}></p>
+                    <p id="price" dangerouslySetInnerHTML={{ __html: price }}></p>
                 </div>
             </div>
             <div className="labelContact">
