@@ -99,9 +99,12 @@ body {
 
         // Menu
         .menu {
-            padding: 40px 30px;
+            padding: 25px 20px;
             display: flex;
             justify-content: space-around;
+            @media (min-width: $breakpoint-mobile) {
+                padding: 40px 30px;
+            }
 
             a {
                 font-weight: 700;
@@ -111,8 +114,11 @@ body {
                 border: 2px solid silver;
                 text-decoration: none;
                 padding: 8px 0;
-                width: 120px;
+                width: 100px;
                 @extend p;
+                @media (min-width: $breakpoint-mobile) {
+                    width: 120px;
+                }
             }
 
             a:hover {

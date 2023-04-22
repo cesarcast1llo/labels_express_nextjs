@@ -4,14 +4,14 @@ import { useRouter } from 'next/router';
 import AutoCompleteInput from './AutoCompleteInput';
 
 const Contact = () => {
-    const [isToggled, setIsToggled] = useState(false);
+    const [isUPS, setIsUPS] = useState(false);
     const [price, setPrice] = useState('$0');
     const [crossPrice, setcrossPrice] = useState('');
     const upsCheck = useRef<HTMLDivElement>(null);
     const router = useRouter();
 
     const toggle = () => {
-        setIsToggled(!isToggled);
+        setIsUPS(!isUPS);
     };
 
     const handleToggle = () => {
@@ -20,7 +20,7 @@ const Contact = () => {
         if (content !== null) {
             const element = content as HTMLElement;
 
-            if (isToggled) {
+            if (isUPS) {
                 element.style.transition = 'transform .5s ease-out';
                 element.style.transform = 'scaleY(0)';
             } else {
@@ -34,6 +34,8 @@ const Contact = () => {
 
     const form = useRef<HTMLFormElement>(null);
 
+    console.log(`${isUPS} outstide`);
+
     useEffect(() => {
         const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
 
@@ -41,12 +43,29 @@ const Contact = () => {
             const weight = parseInt(weightInput.value, 10);
             let newPrice = '0';
             let crossPrice = '';
-            if (weight >= 1 && weight <= 8) {
-                crossPrice = `<s>$11</s>`;
-                newPrice = `$5`;
-            } else if (weight >= 9 && weight <= 70) {
-                crossPrice = `<s>$22</s>`;
-                newPrice = `$10`;
+            console.log(`${isUPS} inside`);
+            if (isUPS) {
+                if (weight >= 1 && weight <= 15) {
+                    crossPrice = `<s>$14</s>`;
+                    newPrice = `$8`;
+                } else if (weight >= 15 && weight <= 60) {
+                    crossPrice = `<s>$17</s>`;
+                    newPrice = `$9`;
+                } else if (weight >= 61 && weight <= 120) {
+                    crossPrice = `<s>$22</s>`;
+                    newPrice = `$11`;
+                } else if (weight >= 121) {
+                    crossPrice = ``;
+                    newPrice = `Price not available`;
+                }
+            } else {
+                if (weight >= 1 && weight <= 8) {
+                    crossPrice = `<s>$11</s>`;
+                    newPrice = `$5`;
+                } else if (weight >= 9 && weight <= 70) {
+                    crossPrice = `<s>$22</s>`;
+                    newPrice = `$10`;
+                }
             }
             setcrossPrice(crossPrice);
             setPrice(newPrice);
@@ -57,7 +76,7 @@ const Contact = () => {
         return () => {
             weightInput.removeEventListener('input', handleWeightInput);
         };
-    }, [form]);
+    }, [isUPS]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -74,7 +93,7 @@ const Contact = () => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: weight, emailOrPhone: emailOrPhone, isToggled: isToggled, pricePayment: pricePayment },
+                    query: { weight: weight, emailOrPhone: emailOrPhone, isUPS: isUPS, pricePayment: pricePayment },
                 });
             },
             (error) => {
@@ -126,12 +145,12 @@ const Contact = () => {
                     </label>
                     <input type="number" placeholder="Receiver Phone" name="receiver_phone" required />
                 </div>
-            </div>
+            </div>*/}
             <div className="upsOrUsps">
                 <label htmlFor="checkbox" className="upsLabel">
                     <p>Is this a UPS label?</p>
                 </label>
-                <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isToggled} onChange={handleToggle} />
+                <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isUPS} onChange={handleToggle} />
                 <div
                     ref={upsCheck}
                     style={{
@@ -140,7 +159,7 @@ const Contact = () => {
                         transform: 'scaleY(0)',
                     }}
                 >
-                    {isToggled && (
+                    {isUPS && (
                         <div className="upsLabelDimensions">
                             <label htmlFor="ups_dimensions" className="upsDimensionsLabel">
                                 <p>Add dimensions below:</p>
@@ -149,7 +168,7 @@ const Contact = () => {
                         </div>
                     )}
                 </div>
-            </div> */}
+            </div>
             <div className="labelContact weight">
                 <div className="weightInput">
                     <label htmlFor="weight">
