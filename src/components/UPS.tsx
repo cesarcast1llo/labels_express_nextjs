@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from '../../prices.json';
 
 const UPS = () => {
     return (
@@ -9,26 +10,34 @@ const UPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>0-15lbs</p>
+                        <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>$8</p>
-                    </div>
-                </div>
-                <div className="priceWrapper">
-                    <div className="price">
-                        <p>15lbs-60lbs</p>
-                    </div>
-                    <div className="price">
-                        <p>$9</p>
+                        <p>{$.ups.oneToEight.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>60lbs-120lbs</p>
+                        <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$11</p>
+                        <p>{$.ups.tenToFourFive.newPrice}</p>
+                    </div>
+                </div>
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[2]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.ups.fourSixSevenZero.newPrice}</p>
+                    </div>
+                </div>
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[3]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.ups.sevenTenAbove.newPrice}</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +47,7 @@ const UPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>0-15lbs</p>
+                        <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
                         <p>$21</p>
@@ -46,7 +55,7 @@ const UPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>15lbs-60lbs</p>
+                        <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
                         <p>$23</p>
@@ -54,7 +63,7 @@ const UPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>60lbs-120lbs</p>
+                        <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
                         <p>$25</p>
@@ -67,7 +76,7 @@ const UPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>0-15lbs</p>
+                        <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
                         <p>$13</p>
@@ -75,7 +84,7 @@ const UPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>15lbs-60lbs</p>
+                        <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
                         <p>$15</p>
@@ -83,7 +92,7 @@ const UPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>60lbs-120lbs</p>
+                        <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
                         <p>$17</p>
@@ -91,11 +100,7 @@ const UPS = () => {
                 </div>
             </div>
             <div className="extras">
-                <div className="priceWrapper">
-                    <div className="price">
-                        <p style={{ fontSize: 16, lineHeight: '20px' }}>UPS Next Day Air Early, UPS 3 Day Select, Upon&nbsp;request</p>
-                    </div>
-                </div>
+                <p style={{ fontSize: 16, lineHeight: '20px' }} dangerouslySetInnerHTML={{ __html: $.usps.extras[0] }} />
             </div>
         </div>
     );

@@ -1,40 +1,45 @@
 import React from 'react';
+import $ from '../../prices.json';
 
 const USPS = () => {
     return (
         <div className="usps">
             <div className="priorityMail">
                 <div className="subhead">
-                    <h2>
-                        USPS Priority Mail<sup>®</sup>
-                    </h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: $.usps.options[0] }} />
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>1lbs-8lbs</p>
+                        <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>$5</p>
+                        <p>{$.usps.oneToEight.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>9lbs-70lbs</p>
+                        <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$10</p>
+                        <p>{$.usps.tenToFourFive.newPrice}</p>
+                    </div>
+                </div>
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[2]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.usps.fourSixSevenZero.newPrice}</p>
                     </div>
                 </div>
             </div>
             <div className="prioritySignature">
                 <div className="subhead">
-                    <h2>
-                        USPS Priority Signature Confirmation<sup>™</sup>
-                    </h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: $.usps.options[1] }} />
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>0lbs-8lbs</p>
+                        <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
                         <p>$9</p>
@@ -42,18 +47,16 @@ const USPS = () => {
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>9lbs-30lbs</p>
+                        <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$11</p>
+                        <p>$12.5</p>
                     </div>
                 </div>
             </div>
             <div className="firstClass">
                 <div className="subhead">
-                    <h2>
-                        USPS First Class&nbsp;Mail<sup>®</sup>
-                    </h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: $.usps.options[2] }} />
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
@@ -65,13 +68,7 @@ const USPS = () => {
                 </div>
             </div>
             <div className="extras">
-                <div className="priceWrapper">
-                    <div className="price">
-                        <p style={{ fontSize: 16, lineHeight: '20px' }}>
-                            USPS Priority Mail&nbsp;Express<sup>®</sup> Upon&nbsp;request
-                        </p>
-                    </div>
-                </div>
+                <p style={{ fontSize: 16, lineHeight: '20px' }} dangerouslySetInnerHTML={{ __html: $.usps.extras[0] }} />
             </div>
         </div>
     );

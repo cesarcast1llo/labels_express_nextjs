@@ -1,3 +1,5 @@
+import $ from '../../prices.json';
+
 type Price = {
     crossPrice: string;
     newPrice: string;
@@ -6,28 +8,37 @@ type Price = {
 function getPrice(weight: number, isUPS: boolean): Price {
     let newPrice = '0';
     let crossPrice = '';
-    console.log(`${isUPS} inside`);
+
     if (isUPS) {
-        if (weight >= 1 && weight <= 15) {
-            crossPrice = `<s>$14</s>`;
-            newPrice = `$8`;
-        } else if (weight >= 15 && weight <= 60) {
-            crossPrice = `<s>$17</s>`;
-            newPrice = `$9`;
-        } else if (weight >= 61 && weight <= 120) {
-            crossPrice = `<s>$22</s>`;
-            newPrice = `$11`;
+        if (weight >= 1 && weight <= 8) {
+            crossPrice = `${$.ups.oneToEight.crossPrice}`;
+            newPrice = `${$.ups.oneToEight.newPrice}`;
+        } else if (weight >= 10 && weight <= 45) {
+            crossPrice = `${$.ups.tenToFourFive.crossPrice}`;
+            newPrice = `${$.ups.tenToFourFive.newPrice}`;
+        } else if (weight >= 46 && weight <= 70) {
+            crossPrice = `${$.ups.fourSixSevenZero.crossPrice}`;
+            newPrice = `${$.ups.fourSixSevenZero.newPrice}`;
+        } else if (weight >= 71 && weight <= 120) {
+            crossPrice = `${$.ups.sevenTenAbove.crossPrice}`;
+            newPrice = `${$.ups.sevenTenAbove.newPrice}`;
         } else if (weight >= 121) {
-            crossPrice = ``;
-            newPrice = `Price not available`;
+            crossPrice = `${$.ups.oneTwoOneAbove.crossPrice}`;
+            newPrice = `${$.ups.oneTwoOneAbove.newPrice}`;
         }
     } else {
         if (weight >= 1 && weight <= 8) {
-            crossPrice = `<s>$11</s>`;
-            newPrice = `$5`;
-        } else if (weight >= 9 && weight <= 70) {
-            crossPrice = `<s>$22</s>`;
-            newPrice = `$10`;
+            crossPrice = `${$.usps.oneToEight.crossPrice}`;
+            newPrice = `${$.usps.oneToEight.newPrice}`;
+        } else if (weight >= 10 && weight <= 45) {
+            crossPrice = `${$.usps.tenToFourFive.crossPrice}`;
+            newPrice = `${$.usps.tenToFourFive.newPrice}`;
+        } else if (weight >= 46 && weight <= 70) {
+            crossPrice = `${$.ups.fourSixSevenZero.crossPrice}`;
+            newPrice = `${$.ups.fourSixSevenZero.newPrice}`;
+        } else if (weight >= 71) {
+            crossPrice = `${$.ups.sevenTenAbove.crossPrice}`;
+            newPrice = `${$.ups.sevenTenAbove.newPrice}`;
         }
     }
 

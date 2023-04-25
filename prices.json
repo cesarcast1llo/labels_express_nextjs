@@ -1,0 +1,63 @@
+{
+    "weights": [
+        "0-8lbs",
+        "15lbs-45lbs",
+        "46lbs-70lbs",
+        "71lbs-120lbs"
+    ],
+    "ups": {
+        "options": [
+            "USPS Priority Mail<sup>®</sup>",
+            "USPS Priority Signature Confirmation"
+        ],
+        "oneToEight": {
+            "crossPrice": "<s>$9</s>",
+            "newPrice": "$7"
+        },
+        "tenToFourFive": {
+            "crossPrice": "<s>$16</s>",
+            "newPrice": "$8"
+        },
+        "fourSixSevenZero": {
+            "crossPrice": "<s>$22</s>",
+            "newPrice": "$9"
+        },
+        "sevenTenAbove": {
+            "crossPrice": "<s>$30</s>",
+            "newPrice": "$11"
+        },
+        "oneTwoOneAbove": {
+            "crossPrice": "",
+            "newPrice": "Price not available"
+        },
+        "extras": [
+            "Upon request: <br />UPS Next Day Air Early, UPS 3 Day&nbsp;Select"
+        ]
+    },
+    "usps": {
+        "options": [
+            "USPS Priority Mail<sup>®</sup>",
+            "USPS Priority Signature Confirmation <sup>®</sup>",
+            "USPS First Class&nbsp;Mail<sup>®</sup>"
+        ],
+        "oneToEight": {
+            "crossPrice": "<s>$9</s>",
+            "newPrice": "$6"
+        },
+        "tenToFourFive": {
+            "crossPrice": "<s>$16</s>",
+            "newPrice": "$9.5"
+        },
+        "fourSixSevenZero": {
+            "crossPrice": "<s>$22</s>",
+            "newPrice": "$11"
+        },
+        "sevenTenAbove": {
+            "crossPrice": "",
+            "newPrice": "Price not available"
+        },
+        "extras": [
+            "Upon request: <br />USPS Priority Mail&nbsp;Express<sup>®</sup>"
+        ]
+    }
+}
