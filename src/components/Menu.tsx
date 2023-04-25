@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 type MenuProps = {
     firstPage: string;
@@ -15,9 +16,9 @@ const Menu: React.FC<MenuProps> = ({ firstPage, secondPage }) => {
 
     return (
         <div className="menu">
-            <a className="option" href={checkForHome(firstPage)}>
+            <Link className="option" href={checkForHome(firstPage)}>
                 {firstPage}
-            </a>
+            </Link>
             {/* <a className="option" href={checkForHome(secondPage)}>
                 {secondPage}
             </a> */}
