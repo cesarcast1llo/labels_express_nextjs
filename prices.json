@@ -1,8 +1,9 @@
 {
     "weights": [
         "0-8lbs",
-        "15lbs-45lbs",
-        "46lbs-70lbs",
+        "9lbs-30lbs",
+        "31lbs-50lbs",
+        "51lbs-70lbs",
         "71lbs-120lbs"
     ],
     "ups": {
@@ -11,20 +12,24 @@
             "USPS Priority Signature Confirmation"
         ],
         "oneToEight": {
-            "crossPrice": "<s>$9</s>",
+            "crossPrice": "<s>$11</s>",
             "newPrice": "$7"
         },
-        "tenToFourFive": {
+        "nineToThirty": {
             "crossPrice": "<s>$16</s>",
-            "newPrice": "$8"
+            "newPrice": "$9"
         },
-        "fourSixSevenZero": {
-            "crossPrice": "<s>$22</s>",
+        "threeOneFifty": {
+            "crossPrice": "<s>$17</s>",
             "newPrice": "$10"
         },
-        "sevenTenAbove": {
-            "crossPrice": "<s>$30</s>",
+        "fiftyOneSeventy": {
+            "crossPrice": "<s>$20</s>",
             "newPrice": "$12"
+        },
+        "seventyOneTwoOne": {
+            "crossPrice": "<s>$23</s>",
+            "newPrice": "$14"
         },
         "oneTwoOneAbove": {
             "crossPrice": "",
@@ -41,18 +46,22 @@
             "USPS First Class&nbsp;Mail<sup>®</sup>"
         ],
         "oneToEight": {
-            "crossPrice": "<s>$8</s>",
-            "newPrice": "$5"
+            "crossPrice": "<s>$12</s>",
+            "newPrice": "$7"
         },
-        "tenToFourFive": {
+        "nineToThirty": {
             "crossPrice": "<s>$15</s>",
-            "newPrice": "$8"
+            "newPrice": "$9"
         },
-        "fourSixSevenZero": {
-            "crossPrice": "<s>$22</s>",
+        "threeOneFifty": {
+            "crossPrice": "<s>$18</s>",
             "newPrice": "$11"
         },
-        "sevenTenAbove": {
+        "fiftyOneSeventy": {
+            "crossPrice": "<s>$21</s>",
+            "newPrice": "$13"
+        },
+        "seventyOneAbove": {
             "crossPrice": "",
             "newPrice": "Not available"
         },

@@ -21,7 +21,7 @@ const USPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.usps.tenToFourFive.newPrice}</p>
+                        <p>{$.usps.nineToThirty.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -29,7 +29,15 @@ const USPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.usps.fourSixSevenZero.newPrice}</p>
+                        <p>{$.usps.threeOneFifty.newPrice}</p>
+                    </div>
+                </div>
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[3]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.usps.fiftyOneSeventy.newPrice}</p>
                     </div>
                 </div>
             </div>

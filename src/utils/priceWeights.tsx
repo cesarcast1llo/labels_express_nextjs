@@ -13,15 +13,18 @@ function getPrice(weight: number, isUPS: boolean): Price {
         if (weight >= 1 && weight <= 8) {
             crossPrice = `${$.ups.oneToEight.crossPrice}`;
             newPrice = `${$.ups.oneToEight.newPrice}`;
-        } else if (weight >= 10 && weight <= 45) {
-            crossPrice = `${$.ups.tenToFourFive.crossPrice}`;
-            newPrice = `${$.ups.tenToFourFive.newPrice}`;
-        } else if (weight >= 46 && weight <= 70) {
-            crossPrice = `${$.ups.fourSixSevenZero.crossPrice}`;
-            newPrice = `${$.ups.fourSixSevenZero.newPrice}`;
+        } else if (weight >= 9 && weight <= 30) {
+            crossPrice = `${$.ups.nineToThirty.crossPrice}`;
+            newPrice = `${$.ups.nineToThirty.newPrice}`;
+        } else if (weight >= 31 && weight <= 50) {
+            crossPrice = `${$.ups.threeOneFifty.crossPrice}`;
+            newPrice = `${$.ups.threeOneFifty.newPrice}`;
+        } else if (weight >= 51 && weight <= 70) {
+            crossPrice = `${$.ups.fiftyOneSeventy.crossPrice}`;
+            newPrice = `${$.ups.fiftyOneSeventy.newPrice}`;
         } else if (weight >= 71 && weight <= 120) {
-            crossPrice = `${$.ups.sevenTenAbove.crossPrice}`;
-            newPrice = `${$.ups.sevenTenAbove.newPrice}`;
+            crossPrice = `${$.ups.seventyOneTwoOne.crossPrice}`;
+            newPrice = `${$.ups.seventyOneTwoOne.newPrice}`;
         } else if (weight >= 121) {
             crossPrice = `${$.ups.oneTwoOneAbove.crossPrice}`;
             newPrice = `${$.ups.oneTwoOneAbove.newPrice}`;
@@ -30,15 +33,18 @@ function getPrice(weight: number, isUPS: boolean): Price {
         if (weight >= 1 && weight <= 8) {
             crossPrice = `${$.usps.oneToEight.crossPrice}`;
             newPrice = `${$.usps.oneToEight.newPrice}`;
-        } else if (weight >= 10 && weight <= 45) {
-            crossPrice = `${$.usps.tenToFourFive.crossPrice}`;
-            newPrice = `${$.usps.tenToFourFive.newPrice}`;
-        } else if (weight >= 46 && weight <= 70) {
-            crossPrice = `${$.usps.fourSixSevenZero.crossPrice}`;
-            newPrice = `${$.usps.fourSixSevenZero.newPrice}`;
+        } else if (weight >= 9 && weight <= 30) {
+            crossPrice = `${$.usps.nineToThirty.crossPrice}`;
+            newPrice = `${$.usps.nineToThirty.newPrice}`;
+        } else if (weight >= 31 && weight <= 50) {
+            crossPrice = `${$.usps.threeOneFifty.crossPrice}`;
+            newPrice = `${$.usps.threeOneFifty.newPrice}`;
+        } else if (weight >= 51 && weight <= 70) {
+            crossPrice = `${$.usps.fiftyOneSeventy.crossPrice}`;
+            newPrice = `${$.usps.fiftyOneSeventy.newPrice}`;
         } else if (weight >= 71) {
-            crossPrice = `${$.usps.sevenTenAbove.crossPrice}`;
-            newPrice = `${$.usps.sevenTenAbove.newPrice}`;
+            crossPrice = `${$.usps.seventyOneAbove.crossPrice}`;
+            newPrice = `${$.usps.seventyOneAbove.newPrice}`;
         }
     }
 

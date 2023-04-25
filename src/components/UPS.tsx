@@ -21,7 +21,7 @@ const UPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.ups.tenToFourFive.newPrice}</p>
+                        <p>{$.ups.nineToThirty.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -29,7 +29,7 @@ const UPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.ups.fourSixSevenZero.newPrice}</p>
+                        <p>{$.ups.threeOneFifty.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -37,7 +37,15 @@ const UPS = () => {
                         <p>{$.weights[3]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.ups.sevenTenAbove.newPrice}</p>
+                        <p>{$.ups.fiftyOneSeventy.newPrice}</p>
+                    </div>
+                </div>
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[4]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.ups.seventyOneTwoOne.newPrice}</p>
                     </div>
                 </div>
             </div>
