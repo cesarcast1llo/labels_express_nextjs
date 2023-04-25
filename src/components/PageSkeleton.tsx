@@ -14,7 +14,7 @@ const PageSkeleton: React.FC<PageSkeletonProps> = ({ children, firstPage, second
         <>
             <Head>
                 <title>Labels Express</title>
-                <meta name="description" content="Simple site generating labels at a fraction of the cost" />
+                <meta name="description" content="Generate labels at a fraction of the cost" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
