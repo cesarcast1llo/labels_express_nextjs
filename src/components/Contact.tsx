@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { useRouter } from 'next/router';
 import AutoCompleteInput from './AutoCompleteInput';
+import getPrice from '@/utils/priceWeights';
 
 const Contact = () => {
     const [isUPS, setIsUPS] = useState(false);
@@ -34,39 +35,12 @@ const Contact = () => {
 
     const form = useRef<HTMLFormElement>(null);
 
-    console.log(`${isUPS} outstide`);
-
     useEffect(() => {
         const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
 
         function handleWeightInput() {
             const weight = parseInt(weightInput.value, 10);
-            let newPrice = '0';
-            let crossPrice = '';
-            console.log(`${isUPS} inside`);
-            if (isUPS) {
-                if (weight >= 1 && weight <= 15) {
-                    crossPrice = `<s>$14</s>`;
-                    newPrice = `$8`;
-                } else if (weight >= 15 && weight <= 60) {
-                    crossPrice = `<s>$17</s>`;
-                    newPrice = `$9`;
-                } else if (weight >= 61 && weight <= 120) {
-                    crossPrice = `<s>$22</s>`;
-                    newPrice = `$11`;
-                } else if (weight >= 121) {
-                    crossPrice = ``;
-                    newPrice = `Price not available`;
-                }
-            } else {
-                if (weight >= 1 && weight <= 8) {
-                    crossPrice = `<s>$11</s>`;
-                    newPrice = `$5`;
-                } else if (weight >= 9 && weight <= 70) {
-                    crossPrice = `<s>$22</s>`;
-                    newPrice = `$10`;
-                }
-            }
+            const { crossPrice, newPrice } = getPrice(weight, isUPS);
             setcrossPrice(crossPrice);
             setPrice(newPrice);
         }
@@ -76,6 +50,11 @@ const Contact = () => {
         return () => {
             weightInput.removeEventListener('input', handleWeightInput);
         };
+    }, [isUPS]);
+
+    useEffect(() => {
+        const { newPrice } = getPrice(parseInt(form.current?.elements.namedItem('weight')?.value || '0', 10), isUPS);
+        setPrice(newPrice);
     }, [isUPS]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
