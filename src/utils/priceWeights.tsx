@@ -34,11 +34,11 @@ function getPrice(weight: number, isUPS: boolean): Price {
             crossPrice = `${$.usps.tenToFourFive.crossPrice}`;
             newPrice = `${$.usps.tenToFourFive.newPrice}`;
         } else if (weight >= 46 && weight <= 70) {
-            crossPrice = `${$.ups.fourSixSevenZero.crossPrice}`;
-            newPrice = `${$.ups.fourSixSevenZero.newPrice}`;
+            crossPrice = `${$.usps.fourSixSevenZero.crossPrice}`;
+            newPrice = `${$.usps.fourSixSevenZero.newPrice}`;
         } else if (weight >= 71) {
-            crossPrice = `${$.ups.sevenTenAbove.crossPrice}`;
-            newPrice = `${$.ups.sevenTenAbove.newPrice}`;
+            crossPrice = `${$.usps.sevenTenAbove.crossPrice}`;
+            newPrice = `${$.usps.sevenTenAbove.newPrice}`;
         }
     }
 
