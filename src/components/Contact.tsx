@@ -10,6 +10,7 @@ const Contact = () => {
     const [crossPrice, setcrossPrice] = useState('');
     const upsCheck = useRef<HTMLDivElement>(null);
     const router = useRouter();
+    const form = useRef<HTMLFormElement>(null);
 
     const toggle = () => {
         setIsUPS(!isUPS);
@@ -32,8 +33,6 @@ const Contact = () => {
 
         toggle();
     };
-
-    const form = useRef<HTMLFormElement>(null);
 
     useEffect(() => {
         const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
@@ -74,7 +73,7 @@ const Contact = () => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: `${weight} lbs`, emailOrPhone: emailOrPhone, isUPS: isUPS, pricePayment: pricePayment },
+                    query: { weight: `${weight} lbs`, emailOrPhone: emailOrPhone, isUPS: isUPS, pricePayment: pricePayment, price: price },
                 });
             },
             (error) => {
@@ -82,12 +81,17 @@ const Contact = () => {
             }
         );
 
-        console.log(pricePayment);
-
         event.currentTarget.reset();
     };
 
-    console.log(price);
+    if (form.current) {
+        const priceInput = document.getElementById('price') as HTMLParagraphElement;
+        const pricePayment = priceInput.textContent;
+        const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
+        textarea.value = `${pricePayment}`;
+    } else {
+        console.log('form.current is undefined');
+    }
 
     return (
         <form ref={form} onSubmit={sendEmail} className="form">
@@ -126,7 +130,7 @@ const Contact = () => {
                     </label>
                     <input type="number" placeholder="Receiver Phone" name="receiver_phone" required />
                 </div>
-            </div>*/}
+            </div> */}
             <div className="upsOrUsps">
                 <label htmlFor="checkbox" className="upsLabel">
                     <p>Is this a UPS label?</p>
@@ -149,19 +153,19 @@ const Contact = () => {
                                 <div>
                                     <p>
                                         H:
-                                        <input type="text" name="ups_dimensions" className="upsInput" required />″
+                                        <input type="text" name="height" className="upsInput" required />″
                                     </p>
                                 </div>
                                 <div>
                                     <p>
                                         W:
-                                        <input type="text" name="ups_dimensions" className="upsInput" required />″
+                                        <input type="text" name="width" className="upsInput" required />″
                                     </p>
                                 </div>
                                 <div>
                                     <p>
                                         L:
-                                        <input type="text" name="ups_dimensions" className="upsInput" required />″
+                                        <input type="text" name="length" className="upsInput" required />″
                                     </p>
                                 </div>
                             </div>
@@ -183,6 +187,7 @@ const Contact = () => {
                     </label>
                     <p dangerouslySetInnerHTML={{ __html: crossPrice }}></p>
                     <p id="price" dangerouslySetInnerHTML={{ __html: price }}></p>
+                    <textarea name="price" />
                 </div>
             </div>
             <div className="labelContact">
