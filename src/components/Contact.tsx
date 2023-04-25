@@ -53,7 +53,9 @@ const Contact = () => {
     }, [isUPS]);
 
     useEffect(() => {
-        const { newPrice } = getPrice(parseInt(form.current?.elements.namedItem('weight')?.value || '0', 10), isUPS);
+        const weightElement = form.current?.elements.namedItem('weight');
+        const weightValue = weightElement && 'value' in weightElement ? weightElement.value : '0';
+        const { newPrice } = getPrice(parseInt(weightValue, 10), isUPS);
         setPrice(newPrice);
     }, [isUPS]);
 
