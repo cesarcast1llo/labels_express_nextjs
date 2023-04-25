@@ -1,5 +1,5 @@
 .paymentPage {
-    padding: 25px 30px;
+    padding: 25px 30px 0;
 
     .paymentType {
         display: block;
@@ -44,6 +44,21 @@
                     padding-top: 15px;
                 }
             }
+        }
+    }
+
+    .contactMe {
+        padding-top: 15px;
+
+        a {
+            text-decoration: none;
+        }
+
+        span {
+            padding-top: 5px;
+            display: block;
+            text-decoration: underline;
+            white-space: nowrap;
         }
     }
 

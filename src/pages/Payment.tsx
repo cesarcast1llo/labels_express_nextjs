@@ -62,6 +62,13 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
                 <p>
                     <i>{emailOrPhone}</i>
                 </p>
+                <div className="contactMe">
+                    <a href="sms:5109454950">
+                        <p>
+                            Questions? Text: <span>510-945-4950</span>
+                        </p>
+                    </a>
+                </div>
             </div>
         </PageSkeleton>
     );
