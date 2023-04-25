@@ -6,7 +6,7 @@ type Price = {
 };
 
 function getPrice(weight: number, isUPS: boolean): Price {
-    let newPrice = '0';
+    let newPrice = '$0';
     let crossPrice = '';
 
     if (isUPS) {

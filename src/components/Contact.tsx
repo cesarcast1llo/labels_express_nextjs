@@ -141,11 +141,30 @@ const Contact = () => {
                     }}
                 >
                     {isUPS && (
-                        <div className="upsLabelDimensions">
+                        <div className="toggleClass">
                             <label htmlFor="ups_dimensions" className="upsDimensionsLabel">
                                 <p>Add dimensions below:</p>
                             </label>
-                            <input type="text" placeholder="Label dimensions" name="ups_dimensions" className="upsInput" />
+                            <div className="upsLabelDimensions">
+                                <div>
+                                    <p>
+                                        H:
+                                        <input type="text" name="ups_dimensions" className="upsInput" />″
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        W:
+                                        <input type="text" name="ups_dimensions" className="upsInput" />″
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        L:
+                                        <input type="text" name="ups_dimensions" className="upsInput" />″
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>

@@ -358,29 +358,55 @@ body {
 
                         .upsLabel {
                             display: inline-block;
-                            padding: 0 10px 5px;
+                            padding: 0 10px;
                         }
 
                         .upsCheckbox {
                             display: inline-block;
                             width: 20px;
+                            margin: 0;
+                        }
+
+                        .toggleClass {
+                            padding: 15px 0 10px;
+                        }
+
+                        .upsDimensionsLabel {
+                            text-align: center;
                         }
 
                         .upsLabelDimensions {
-                            .upsDimensionsLabel {
-                                display: block;
-                                padding-bottom: 5px;
+                            display: flex;
+                            justify-content: space-evenly;
+                            padding-top: 10px;
+
+                            p {
+                                font-size: 14px;
+                                line-height: 18px;
                             }
 
                             .upsInput {
-                                margin: 5px 0 0;
-                                width: 100%;
+                                margin: 0 5px;
+                                display: inline-block;
+
+                                text-align: center;
+                                width: 40px;
+                                font-size: 12px;
                             }
                         }
                     }
 
                     .labelContact {
                         padding-top: 15px;
+
+                        input {
+                            padding: 5px 0 5px 10px;
+                            margin-top: 5px;
+                            width: 97.5%;
+                            @media (min-width: $breakpoint-smallTablet) {
+                                width: 98.5%;
+                            }
+                        }
                     }
 
                     .weight {
@@ -399,6 +425,14 @@ body {
                                 p {
                                     padding-right: 10px;
                                 }
+                            }
+
+                            input {
+                                width: 60px;
+                                text-align: center;
+                                font-size: 12px;
+                                line-height: 15px;
+                                padding: 0;
                             }
 
                             s {
@@ -421,7 +455,10 @@ body {
                         }
 
                         .weightInput:first-child {
-                            padding-bottom: 10px;
+                            padding-bottom: 15px;
+                            @media (min-width: $breakpoint-smallTablet) {
+                                padding-bottom: 0;
+                            }
                         }
                     }
 
