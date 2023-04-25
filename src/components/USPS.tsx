@@ -50,7 +50,7 @@ const USPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$12.5</p>
+                        <p>$12</p>
                     </div>
                 </div>
             </div>

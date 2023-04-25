@@ -32,11 +32,11 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
     return (
         <PageSkeleton firstPage="Home" secondPage="FAQ">
             <div className="paymentPage">
-                <div className="flex">Drop down of prices</div>
+                {/* <div className="flex">Drop down of prices</div> */}
                 <div className="paymentType mobBorder">
                     <div className="totalPrice">
                         <h2>Weight:</h2>
-                        <p>{weight}&nbsp;lbs</p>
+                        <p>{weight}</p>
                     </div>
                     <div className="totalPrice">
                         <h2>Price:</h2>

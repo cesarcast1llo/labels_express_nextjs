@@ -74,7 +74,7 @@ const Contact = () => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: weight, emailOrPhone: emailOrPhone, isUPS: isUPS, pricePayment: pricePayment },
+                    query: { weight: `${weight} lbs`, emailOrPhone: emailOrPhone, isUPS: isUPS, pricePayment: pricePayment },
                 });
             },
             (error) => {
@@ -149,19 +149,19 @@ const Contact = () => {
                                 <div>
                                     <p>
                                         H:
-                                        <input type="text" name="ups_dimensions" className="upsInput" />″
+                                        <input type="text" name="ups_dimensions" className="upsInput" required />″
                                     </p>
                                 </div>
                                 <div>
                                     <p>
                                         W:
-                                        <input type="text" name="ups_dimensions" className="upsInput" />″
+                                        <input type="text" name="ups_dimensions" className="upsInput" required />″
                                     </p>
                                 </div>
                                 <div>
                                     <p>
                                         L:
-                                        <input type="text" name="ups_dimensions" className="upsInput" />″
+                                        <input type="text" name="ups_dimensions" className="upsInput" required />″
                                     </p>
                                 </div>
                             </div>

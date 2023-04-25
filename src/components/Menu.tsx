@@ -18,9 +18,9 @@ const Menu: React.FC<MenuProps> = ({ firstPage, secondPage }) => {
             <a className="option" href={checkForHome(firstPage)}>
                 {firstPage}
             </a>
-            <a className="option" href={checkForHome(secondPage)}>
+            {/* <a className="option" href={checkForHome(secondPage)}>
                 {secondPage}
-            </a>
+            </a> */}
         </div>
     );
 };

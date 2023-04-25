@@ -20,11 +20,11 @@
         },
         "fourSixSevenZero": {
             "crossPrice": "<s>$22</s>",
-            "newPrice": "$9"
+            "newPrice": "$10"
         },
         "sevenTenAbove": {
             "crossPrice": "<s>$30</s>",
-            "newPrice": "$11"
+            "newPrice": "$12"
         },
         "oneTwoOneAbove": {
             "crossPrice": "",
@@ -41,12 +41,12 @@
             "USPS First Class&nbsp;Mail<sup>®</sup>"
         ],
         "oneToEight": {
-            "crossPrice": "<s>$9</s>",
-            "newPrice": "$6"
+            "crossPrice": "<s>$8</s>",
+            "newPrice": "$5"
         },
         "tenToFourFive": {
-            "crossPrice": "<s>$16</s>",
-            "newPrice": "$9.5"
+            "crossPrice": "<s>$15</s>",
+            "newPrice": "$8"
         },
         "fourSixSevenZero": {
             "crossPrice": "<s>$22</s>",
