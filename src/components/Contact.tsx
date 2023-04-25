@@ -178,7 +178,7 @@ const Contact = () => {
                     <label htmlFor="weight">
                         <p>Weight:</p>
                     </label>
-                    <input type="number" name="weight" placeholder="Whole numbers" required />
+                    <input type="number" name="weight" required />
                     <p className="lbs">lbs</p>
                 </div>
                 <div className="weightInput">
