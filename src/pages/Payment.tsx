@@ -71,7 +71,7 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
                     <a href="sms:5109454950">
                         <p>
                             Questions or want to do multiple&nbsp;labels? <br />
-                            Text: <span>510-945-4950</span>
+                            Text: <span>510-945-4590</span>
                         </p>
                     </a>
                 </div>
