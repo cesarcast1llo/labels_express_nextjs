@@ -33,17 +33,18 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
         <PageSkeleton firstPage="Home" secondPage="FAQ">
             <div className="paymentPage">
                 {/* <div className="flex">Drop down of prices</div> */}
-                <div className="paymentType mobBorder">
-                    <div className="totalPrice">
-                        <h2>Weight:</h2>
-                        <p>{weight}</p>
+                {weight && (
+                    <div className="paymentType mobBorder">
+                        <div className="totalPrice">
+                            <h2>Weight:</h2>
+                            <p>{weight}</p>
+                        </div>
+                        <div className="totalPrice">
+                            <h2>Price:</h2>
+                            <p dangerouslySetInnerHTML={{ __html: price }}></p>
+                        </div>
                     </div>
-                    <div className="totalPrice">
-                        <h2>Price:</h2>
-                        <p dangerouslySetInnerHTML={{ __html: price }}></p>
-                    </div>
-                </div>
-
+                )}
                 <div className="paymentType">
                     <div className="payments">
                         <a href={venmoURL} target="_blank">
@@ -58,14 +59,19 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
                         </a>
                     </div>
                 </div>
-                <p>Once the payment is confirmed, I will deliver your label&nbsp;to:</p>
-                <p>
-                    <i>{emailOrPhone}</i>
-                </p>
+                {emailOrPhone && (
+                    <>
+                        <p>Once the payment is confirmed, I will deliver your label&nbsp;to:</p>
+                        <p>
+                            <i>{emailOrPhone}</i>
+                        </p>
+                    </>
+                )}
                 <div className="contactMe">
                     <a href="sms:5109454950">
                         <p>
-                            Questions? Text: <span>510-945-4950</span>
+                            Questions or want to do multiple&nbsp;labels? <br />
+                            Text: <span>510-945-4950</span>
                         </p>
                     </a>
                 </div>
