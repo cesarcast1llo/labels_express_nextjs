@@ -95,7 +95,7 @@ const Contact = () => {
 
     return (
         <form ref={form} onSubmit={sendEmail} className="form">
-            {/* <div className="labelInfo">
+            <div className="labelInfo">
                 <div className="sender">
                     <label htmlFor="sender_name">
                         <p>
@@ -130,7 +130,7 @@ const Contact = () => {
                     </label>
                     <input type="number" placeholder="Receiver Phone" name="receiver_phone" required />
                 </div>
-            </div> */}
+            </div>
             <div className="upsOrUsps">
                 <label htmlFor="checkbox" className="upsLabel">
                     <p>Is this a UPS label?</p>
