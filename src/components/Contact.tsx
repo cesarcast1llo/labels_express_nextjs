@@ -6,6 +6,7 @@ import getPrice from '@/utils/priceWeights';
 
 const Contact = () => {
     const [isUPS, setIsUPS] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('lbs');
     const [price, setPrice] = useState('$0');
     const [crossPrice, setcrossPrice] = useState('');
     const upsCheck = useRef<HTMLDivElement>(null);
@@ -32,6 +33,10 @@ const Contact = () => {
         }
 
         toggle();
+    };
+
+    const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedOption(event.target.value);
     };
 
     useEffect(() => {
@@ -132,10 +137,20 @@ const Contact = () => {
                 </div>
             </div>
             <div className="upsOrUsps">
-                <label htmlFor="checkbox" className="upsLabel">
-                    <p>Is this a UPS label?</p>
-                </label>
-                <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isUPS} onChange={handleToggle} />
+                <div className="checkBox">
+                    <div>
+                        <label htmlFor="checkbox" className="upsLabel">
+                            <p>USPS Label?</p>
+                        </label>
+                        <input type="checkbox" className="upsCheckbox" name="checkbox" />
+                    </div>
+                    <div>
+                        <label htmlFor="checkbox" className="upsLabel">
+                            <p>UPS label?</p>
+                        </label>
+                        <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isUPS} onChange={handleToggle} />
+                    </div>
+                </div>
                 <div
                     ref={upsCheck}
                     style={{
@@ -179,7 +194,14 @@ const Contact = () => {
                         <p>Weight:</p>
                     </label>
                     <input type="number" name="weight" required />
-                    <p className="lbs">lbs</p>
+                    <select name="weightType" id="weightType" value={selectedOption} onChange={handleOptionChange}>
+                        <option value="lbs" className="lbs">
+                            lbs
+                        </option>
+                        <option value="oz" className="lbs">
+                            oz
+                        </option>
+                    </select>
                 </div>
                 <div className="weightInput">
                     <label htmlFor="price">

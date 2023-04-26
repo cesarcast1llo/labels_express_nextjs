@@ -108,7 +108,7 @@ const UPS = () => {
                 </div>
             </div>
             <div className="extras">
-                <p style={{ fontSize: 16, lineHeight: '20px' }} dangerouslySetInnerHTML={{ __html: $.usps.extras[0] }} />
+                <p style={{ fontSize: 16, lineHeight: '20px' }} dangerouslySetInnerHTML={{ __html: $.ups.extras[0] }} />
             </div>
         </div>
     );

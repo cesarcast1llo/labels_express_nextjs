@@ -30,6 +30,10 @@ function getPrice(weight: number, isUPS: boolean): Price {
             newPrice = `${$.ups.oneTwoOneAbove.newPrice}`;
         }
     } else {
+        if (weight <= 0 && weight <= 0.15) {
+            crossPrice = `${$.usps.uspsFirstClass.crossPrice}`;
+            newPrice = `${$.usps.uspsFirstClass.newPrice}`;
+        }
         if (weight >= 1 && weight <= 8) {
             crossPrice = `${$.usps.oneToEight.crossPrice}`;
             newPrice = `${$.usps.oneToEight.newPrice}`;

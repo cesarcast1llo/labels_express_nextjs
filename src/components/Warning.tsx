@@ -5,7 +5,7 @@ const Warning = () => {
         <>
             <div className="warning">
                 <div className="warnWrapper">
-                    <p>UPS API is currently down, USPS is live</p>
+                    <p>UPS API is currently down</p>
                 </div>
             </div>
         </>

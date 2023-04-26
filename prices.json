@@ -45,6 +45,10 @@
             "USPS Priority Signature Confirmation <sup>®</sup>",
             "USPS First Class&nbsp;Mail<sup>®</sup>"
         ],
+        "uspsFirstClass": {
+            "crossPrice": "<s>$7</s>",
+            "newPrice": "$3.5"
+        },
         "oneToEight": {
             "crossPrice": "<s>$12</s>",
             "newPrice": "$7"
