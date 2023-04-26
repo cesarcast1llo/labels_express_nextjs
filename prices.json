@@ -31,7 +31,7 @@
             "crossPrice": "<s>$27</s>",
             "newPrice": "$11"
         },
-        "oneTwoOneAbove": {
+        "error": {
             "crossPrice": "",
             "newPrice": "Not available"
         },
@@ -65,7 +65,7 @@
             "crossPrice": "<s>$19</s>",
             "newPrice": "$11"
         },
-        "seventyOneAbove": {
+        "error": {
             "crossPrice": "",
             "newPrice": "Not available"
         },

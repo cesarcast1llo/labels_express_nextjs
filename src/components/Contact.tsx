@@ -6,7 +6,7 @@ import getPrice from '@/utils/priceWeights';
 
 const Contact = () => {
     const [isUPS, setIsUPS] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('lbs');
+    const [ozOrLbs, setozOrLbs] = useState('lbs');
     const [price, setPrice] = useState('$0');
     const [crossPrice, setcrossPrice] = useState('');
     const upsCheck = useRef<HTMLDivElement>(null);
@@ -17,7 +17,7 @@ const Contact = () => {
         setIsUPS(!isUPS);
     };
 
-    const handleToggle = () => {
+    const openUPS = () => {
         const content = upsCheck.current;
 
         if (content !== null) {
@@ -35,8 +35,8 @@ const Contact = () => {
         toggle();
     };
 
-    const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedOption(event.target.value);
+    const changeOzLbs = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setozOrLbs(event.target.value);
     };
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const Contact = () => {
 
         function handleWeightInput() {
             const weight = parseInt(weightInput.value, 10);
-            const { crossPrice, newPrice } = getPrice(weight, isUPS);
+            const { crossPrice, newPrice } = getPrice(weight, isUPS, ozOrLbs);
             setcrossPrice(crossPrice);
             setPrice(newPrice);
         }
@@ -54,23 +54,26 @@ const Contact = () => {
         return () => {
             weightInput.removeEventListener('input', handleWeightInput);
         };
-    }, [isUPS]);
+    }, [isUPS, ozOrLbs]);
 
     useEffect(() => {
         const weightElement = form.current?.elements.namedItem('weight');
         const weightValue = weightElement && 'value' in weightElement ? weightElement.value : '0';
-        const { newPrice } = getPrice(parseInt(weightValue, 10), isUPS);
+        const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPS, ozOrLbs);
+        setcrossPrice(crossPrice);
         setPrice(newPrice);
-    }, [isUPS]);
+    }, [isUPS, ozOrLbs]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
-        const emailOrPhoneInput = form.current?.elements.namedItem('emailOrPhone') as HTMLInputElement;
+        const emailInput = form.current?.elements.namedItem('email') as HTMLInputElement;
+        const weightTypeInput = form.current?.elements.namedItem('weightType') as HTMLInputElement;
         const priceInput = document.getElementById('price') as HTMLParagraphElement;
         const weight = weightInput.value;
-        const emailOrPhone = emailOrPhoneInput.value;
+        const weightType = weightTypeInput.value;
+        const email = emailInput.value;
         const pricePayment = priceInput.textContent;
 
         emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
@@ -78,7 +81,7 @@ const Contact = () => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: `${weight} lbs`, emailOrPhone: emailOrPhone, isUPS: isUPS, pricePayment: pricePayment, price: price },
+                    query: { weight: `${weight} ${ozOrLbs}`, email: email, isUPS: isUPS, pricePayment: pricePayment, price: price },
                 });
             },
             (error) => {
@@ -95,7 +98,6 @@ const Contact = () => {
         const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
         textarea.value = `${pricePayment}`;
     } else {
-        console.log('form.current is undefined');
     }
 
     return (
@@ -148,7 +150,7 @@ const Contact = () => {
                         <label htmlFor="checkbox" className="upsLabel">
                             <p>UPS label?</p>
                         </label>
-                        <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isUPS} onChange={handleToggle} />
+                        <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isUPS} onChange={openUPS} />
                     </div>
                 </div>
                 <div
@@ -194,7 +196,7 @@ const Contact = () => {
                         <p>Weight:</p>
                     </label>
                     <input type="number" name="weight" required />
-                    <select name="weightType" id="weightType" value={selectedOption} onChange={handleOptionChange}>
+                    <select name="weightType" id="weightType" value={ozOrLbs} onChange={changeOzLbs}>
                         <option value="lbs" className="lbs">
                             lbs
                         </option>
@@ -214,9 +216,9 @@ const Contact = () => {
             </div>
             <div className="labelContact">
                 <label htmlFor="email">
-                    <p>Provide email or phone number to&nbsp;deliver&nbsp;label:</p>
+                    <p>Provide email to&nbsp;deliver&nbsp;label:</p>
                 </label>
-                <input type="text" name="emailOrPhone" placeholder="Email or Phone Number" required />
+                <input type="text" name="email" placeholder="Email" required />
             </div>
             <button className="toggleBtn" type="submit">
                 Send Label Details
