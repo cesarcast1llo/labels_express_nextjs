@@ -200,7 +200,7 @@ const Contact = () => {
                         <option value="lbs" className="lbs">
                             lbs
                         </option>
-                        <option value="oz" className="lbs">
+                        <option value="oz" className="lbs" disabled={isUPS}>
                             oz
                         </option>
                     </select>
