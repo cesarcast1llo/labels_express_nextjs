@@ -97,6 +97,26 @@ body {
         background-color: $secondaryColor;
         padding: 5%;
 
+        // Warning
+        .warning {
+            padding: 25px 20px;
+            @media (min-width: $breakpoint-mobile) {
+                padding: 40px 30px;
+            }
+
+            .warnWrapper {
+                background-color: rgb(255, 111, 0);
+                border-radius: 8px;
+                padding: 10px;
+
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: white;
+                }
+            }
+        }
+
         // Menu
         .menu {
             padding: 25px 20px;
