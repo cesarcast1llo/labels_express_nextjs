@@ -3,6 +3,7 @@ import emailjs from 'emailjs-com';
 import { useRouter } from 'next/router';
 import AutoCompleteInput from './AutoCompleteInput';
 import getPrice from '@/utils/priceWeights';
+import { timeStamp } from 'console';
 
 const Contact = () => {
     const [isUPS, setIsUPS] = useState(false);
@@ -12,6 +13,14 @@ const Contact = () => {
     const upsCheck = useRef<HTMLDivElement>(null);
     const router = useRouter();
     const form = useRef<HTMLFormElement>(null);
+
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const displayHours = hours % 12 || 12;
+    const actualDate = `${date.getMonth() + 1}&#47;${date.getDate()}&#47;${date.getFullYear()}`;
+    const timeString = `${displayHours}:${minutes} ${ampm} on ${actualDate}`;
 
     const toggle = () => {
         setIsUPS(!isUPS);
@@ -69,10 +78,8 @@ const Contact = () => {
 
         const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
         const emailInput = form.current?.elements.namedItem('email') as HTMLInputElement;
-        const weightTypeInput = form.current?.elements.namedItem('weightType') as HTMLInputElement;
         const priceInput = document.getElementById('price') as HTMLParagraphElement;
         const weight = weightInput.value;
-        const weightType = weightTypeInput.value;
         const email = emailInput.value;
         const pricePayment = priceInput.textContent;
 
@@ -97,7 +104,12 @@ const Contact = () => {
         const pricePayment = priceInput.textContent;
         const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
         textarea.value = `${pricePayment}`;
-    } else {
+    }
+    if (form.current) {
+        const timeStampInput = document.getElementById('timeStamp') as HTMLParagraphElement;
+        const timeStampString = timeStampInput.textContent;
+        const textAreaTimeStamp = document.getElementById('timeStampTextArea') as HTMLTextAreaElement;
+        textAreaTimeStamp.value = `${timeStampString}`;
     }
 
     return (
@@ -217,9 +229,11 @@ const Contact = () => {
                     <label htmlFor="price">
                         <p>Price:</p>
                     </label>
-                    <p dangerouslySetInnerHTML={{ __html: crossPrice }}></p>
-                    <p id="price" dangerouslySetInnerHTML={{ __html: price }}></p>
+                    <p dangerouslySetInnerHTML={{ __html: crossPrice }} />
+                    <p id="price" dangerouslySetInnerHTML={{ __html: price }} />
                     <textarea name="price" />
+                    <p id="timeStamp" dangerouslySetInnerHTML={{ __html: timeString }} />
+                    <textarea id="timeStampTextArea" name="timestamp" />
                 </div>
             </div>
             <div className="labelContact">
