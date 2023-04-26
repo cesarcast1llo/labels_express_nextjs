@@ -112,9 +112,13 @@ const Contact = () => {
                     </label>
                     <input type="text" placeholder="Sender Name" name="sender_name" required />
                     <label htmlFor="sender_address">
-                        <p>Address:</p>
+                        <p>Address Line 1:</p>
                     </label>
-                    <AutoCompleteInput placeholder="Sender Address" name="sender_address" />
+                    <AutoCompleteInput placeholder="Sender Address 1" name="sender_address" />
+                    <label htmlFor="sender_address2">
+                        <p>Address Line 2:</p>
+                    </label>
+                    <input type="text" placeholder="Sender Address 2" name="sender_address2" />
                     <label htmlFor="sender_phone">
                         <p>Phone:</p>
                     </label>
@@ -129,9 +133,13 @@ const Contact = () => {
                     </label>
                     <input type="text" placeholder="Receiver Name" name="receiver_name" required />
                     <label htmlFor="receiver_address">
-                        <p>Address:</p>
+                        <p>Address Line 1:</p>
                     </label>
-                    <AutoCompleteInput placeholder="Receiver Address" name="receiver_address" />
+                    <AutoCompleteInput placeholder="Receiver Address 1" name="receiver_address" />
+                    <label htmlFor="receiver_address2">
+                        <p>Address Line 2:</p>
+                    </label>
+                    <input type="text" placeholder="Receiver Address 2" name="receiver_address2" />
                     <label htmlFor="receiver_phone">
                         <p>Phone:</p>
                     </label>
