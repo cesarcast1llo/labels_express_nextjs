@@ -3,10 +3,13 @@ import emailjs from 'emailjs-com';
 import { useRouter } from 'next/router';
 import AutoCompleteInput from './AutoCompleteInput';
 import getPrice from '@/utils/priceWeights';
-import { timeStamp } from 'console';
+
+const emailjsServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
+const emailjsTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
+const emailjsPublicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
 
 const Contact = () => {
-    const [isUPS, setIsUPS] = useState(false);
+    const [isUPSLabel, setIsUPSLabel] = useState(false);
     const [weightUnits, setWeightUnits] = useState('lbs');
     const [price, setPrice] = useState('$0');
     const [crossPrice, setCrossPrice] = useState('');
@@ -23,21 +26,19 @@ const Contact = () => {
     const timeString = `${displayHours}:${minutes} ${ampm} on ${actualDate}`;
 
     const toggleUPS = () => {
-        setIsUPS(!isUPS);
+        setIsUPSLabel(!isUPSLabel);
     };
 
     const openUPS = () => {
-        const content = upsCheckRef.current;
+        const upsSliderDiv = upsCheckRef.current;
 
-        if (content !== null) {
-            const element = content as HTMLElement;
-
-            if (isUPS) {
-                element.style.transition = 'transform .5s ease-out';
-                element.style.transform = 'scaleY(0)';
+        if (upsSliderDiv !== null) {
+            if (isUPSLabel) {
+                upsSliderDiv.classList.add('upsAnimationClose');
+                upsSliderDiv.classList.remove('upsAnimationOpen');
             } else {
-                element.style.transition = 'transform 0.5s ease-out';
-                element.style.transform = 'scaleY(1)';
+                upsSliderDiv.classList.add('upsAnimationOpen');
+                upsSliderDiv.classList.remove('upsAnimationClose');
             }
         }
 
@@ -53,7 +54,7 @@ const Contact = () => {
 
         function handleWeightInput() {
             const weight = parseInt(weightInput.value, 10);
-            const { crossPrice, newPrice } = getPrice(weight, isUPS, weightUnits);
+            const { crossPrice, newPrice } = getPrice(weight, isUPSLabel, weightUnits);
             setCrossPrice(crossPrice);
             setPrice(newPrice);
         }
@@ -63,32 +64,32 @@ const Contact = () => {
         return () => {
             weightInput.removeEventListener('input', handleWeightInput);
         };
-    }, [isUPS, weightUnits]);
+    }, [isUPSLabel, weightUnits]);
 
     useEffect(() => {
         const weightElement = formRef.current?.elements.namedItem('weight');
         const weightValue = weightElement && 'value' in weightElement ? weightElement.value : '0';
-        const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPS, weightUnits);
+        const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPSLabel, weightUnits);
         setCrossPrice(crossPrice);
         setPrice(newPrice);
-    }, [isUPS, weightUnits]);
+    }, [isUPSLabel, weightUnits]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
         const emailInput = formRef.current?.elements.namedItem('email') as HTMLInputElement;
-        const priceInput = document.getElementById('price') as HTMLParagraphElement;
+        const priceInput = document.getElementById('priceSentEmailjs') as HTMLParagraphElement;
         const weight = weightInput.value;
         const email = emailInput.value;
         const pricePayment = priceInput.textContent;
 
-        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, formRef.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
+        emailjs.sendForm(emailjsServiceId, emailjsTemplateId, formRef.current!, emailjsPublicKey).then(
             (result) => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: `${weight} ${weightUnits}`, email: email, isUPS: isUPS, pricePayment: pricePayment, price: price },
+                    query: { weight: `${weight} ${weightUnits}`, email: email, isUPSLabel: isUPSLabel, pricePayment: pricePayment, price: price },
                 });
             },
             (error) => {
@@ -100,13 +101,13 @@ const Contact = () => {
     };
 
     if (formRef.current) {
-        const priceInput = document.getElementById('price') as HTMLParagraphElement;
+        const priceInput = document.getElementById('priceSentEmailjs') as HTMLParagraphElement;
         const pricePayment = priceInput.textContent;
         const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
         textarea.value = `${pricePayment}`;
     }
     if (formRef.current) {
-        const timeStampInput = document.getElementById('timeStamp') as HTMLParagraphElement;
+        const timeStampInput = document.getElementById('timeStampSentEmailjs') as HTMLParagraphElement;
         const timeStampString = timeStampInput.textContent;
         const textAreaTimeStamp = document.getElementById('timeStampTextArea') as HTMLTextAreaElement;
         textAreaTimeStamp.value = `${timeStampString}`;
@@ -170,18 +171,11 @@ const Contact = () => {
                         <label htmlFor="checkbox" className="upsLabel">
                             <p>UPS label?</p>
                         </label>
-                        <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isUPS} onChange={openUPS} />
+                        <input type="checkbox" className="upsCheckbox" name="checkbox" checked={isUPSLabel} onChange={openUPS} />
                     </div>
                 </div>
-                <div
-                    ref={upsCheckRef}
-                    style={{
-                        transformOrigin: 'top',
-                        overflow: 'hidden',
-                        transform: 'scaleY(0)',
-                    }}
-                >
-                    {isUPS && (
+                <div ref={upsCheckRef} className="upsAnimationClose">
+                    {isUPSLabel && (
                         <div className="toggleClass">
                             <label htmlFor="ups_dimensions" className="upsDimensionsLabel">
                                 <p>Add dimensions below:</p>
@@ -220,7 +214,7 @@ const Contact = () => {
                         <option value="lbs" className="lbs">
                             lbs
                         </option>
-                        <option value="oz" className="lbs" disabled={isUPS}>
+                        <option value="oz" className="lbs" disabled={isUPSLabel}>
                             oz
                         </option>
                     </select>
@@ -230,9 +224,9 @@ const Contact = () => {
                         <p>Price:</p>
                     </label>
                     <p dangerouslySetInnerHTML={{ __html: crossPrice }} />
-                    <p id="price" dangerouslySetInnerHTML={{ __html: price }} />
+                    <p id="priceSentEmailjs" dangerouslySetInnerHTML={{ __html: price }} />
                     <textarea name="price" />
-                    <p id="timeStamp" dangerouslySetInnerHTML={{ __html: timeString }} />
+                    <p id="timeStampSentEmailjs" dangerouslySetInnerHTML={{ __html: timeString }} />
                     <textarea id="timeStampTextArea" name="timestamp" />
                 </div>
             </div>

@@ -69,6 +69,19 @@ input {
     }
 }
 
+// UPS animation
+.upsAnimationClose {
+    transform-origin: top;
+    overflow: hidden;
+    transition: transform 0.5s ease-out;
+    transform: scaleY(0) !important;
+}
+.upsAnimationOpen {
+    transform-origin: top;
+    transition: transform 0.5s ease-in;
+    transform: scaleY(1) !important;
+}
+
 .hideFlex {
     display: none !important;
 
@@ -451,7 +464,7 @@ body {
                                 padding-right: 10px;
                             }
 
-                            p#timeStamp {
+                            p#timeStampSentEmailjs {
                                 display: none !important;
                             }
 
