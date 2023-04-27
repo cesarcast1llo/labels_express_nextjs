@@ -7,12 +7,12 @@ import { timeStamp } from 'console';
 
 const Contact = () => {
     const [isUPS, setIsUPS] = useState(false);
-    const [ozOrLbs, setozOrLbs] = useState('lbs');
+    const [weightUnits, setWeightUnits] = useState('lbs');
     const [price, setPrice] = useState('$0');
-    const [crossPrice, setcrossPrice] = useState('');
-    const upsCheck = useRef<HTMLDivElement>(null);
+    const [crossPrice, setCrossPrice] = useState('');
+    const upsCheckRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
-    const form = useRef<HTMLFormElement>(null);
+    const formRef = useRef<HTMLFormElement>(null);
 
     const date = new Date();
     const hours = date.getHours();
@@ -22,12 +22,12 @@ const Contact = () => {
     const actualDate = `${date.getMonth() + 1}&#47;${date.getDate()}&#47;${date.getFullYear()}`;
     const timeString = `${displayHours}:${minutes} ${ampm} on ${actualDate}`;
 
-    const toggle = () => {
+    const toggleUPS = () => {
         setIsUPS(!isUPS);
     };
 
     const openUPS = () => {
-        const content = upsCheck.current;
+        const content = upsCheckRef.current;
 
         if (content !== null) {
             const element = content as HTMLElement;
@@ -41,20 +41,20 @@ const Contact = () => {
             }
         }
 
-        toggle();
+        toggleUPS();
     };
 
-    const changeOzLbs = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setozOrLbs(event.target.value);
+    const handleWeightUnitsChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setWeightUnits(event.target.value);
     };
 
     useEffect(() => {
-        const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
+        const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
 
         function handleWeightInput() {
             const weight = parseInt(weightInput.value, 10);
-            const { crossPrice, newPrice } = getPrice(weight, isUPS, ozOrLbs);
-            setcrossPrice(crossPrice);
+            const { crossPrice, newPrice } = getPrice(weight, isUPS, weightUnits);
+            setCrossPrice(crossPrice);
             setPrice(newPrice);
         }
 
@@ -63,32 +63,32 @@ const Contact = () => {
         return () => {
             weightInput.removeEventListener('input', handleWeightInput);
         };
-    }, [isUPS, ozOrLbs]);
+    }, [isUPS, weightUnits]);
 
     useEffect(() => {
-        const weightElement = form.current?.elements.namedItem('weight');
+        const weightElement = formRef.current?.elements.namedItem('weight');
         const weightValue = weightElement && 'value' in weightElement ? weightElement.value : '0';
-        const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPS, ozOrLbs);
-        setcrossPrice(crossPrice);
+        const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPS, weightUnits);
+        setCrossPrice(crossPrice);
         setPrice(newPrice);
-    }, [isUPS, ozOrLbs]);
+    }, [isUPS, weightUnits]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const weightInput = form.current?.elements.namedItem('weight') as HTMLInputElement;
-        const emailInput = form.current?.elements.namedItem('email') as HTMLInputElement;
+        const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
+        const emailInput = formRef.current?.elements.namedItem('email') as HTMLInputElement;
         const priceInput = document.getElementById('price') as HTMLParagraphElement;
         const weight = weightInput.value;
         const email = emailInput.value;
         const pricePayment = priceInput.textContent;
 
-        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
+        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID!, process.env.REACT_APP_EMAILJS_TEMPLATE_ID!, formRef.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!).then(
             (result) => {
                 console.log(result.text);
                 router.push({
                     pathname: '/Payment',
-                    query: { weight: `${weight} ${ozOrLbs}`, email: email, isUPS: isUPS, pricePayment: pricePayment, price: price },
+                    query: { weight: `${weight} ${weightUnits}`, email: email, isUPS: isUPS, pricePayment: pricePayment, price: price },
                 });
             },
             (error) => {
@@ -99,13 +99,13 @@ const Contact = () => {
         event.currentTarget.reset();
     };
 
-    if (form.current) {
+    if (formRef.current) {
         const priceInput = document.getElementById('price') as HTMLParagraphElement;
         const pricePayment = priceInput.textContent;
         const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
         textarea.value = `${pricePayment}`;
     }
-    if (form.current) {
+    if (formRef.current) {
         const timeStampInput = document.getElementById('timeStamp') as HTMLParagraphElement;
         const timeStampString = timeStampInput.textContent;
         const textAreaTimeStamp = document.getElementById('timeStampTextArea') as HTMLTextAreaElement;
@@ -113,7 +113,7 @@ const Contact = () => {
     }
 
     return (
-        <form ref={form} onSubmit={sendEmail} className="form">
+        <form ref={formRef} onSubmit={sendEmail} className="form">
             <div className="labelInfo">
                 <div className="sender">
                     <label htmlFor="sender_name">
@@ -174,7 +174,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div
-                    ref={upsCheck}
+                    ref={upsCheckRef}
                     style={{
                         transformOrigin: 'top',
                         overflow: 'hidden',
@@ -216,7 +216,7 @@ const Contact = () => {
                         <p>Weight:</p>
                     </label>
                     <input type="number" name="weight" required />
-                    <select name="weightType" id="weightType" value={ozOrLbs} onChange={changeOzLbs}>
+                    <select name="weightType" id="weightType" value={weightUnits} onChange={handleWeightUnitsChange}>
                         <option value="lbs" className="lbs">
                             lbs
                         </option>
