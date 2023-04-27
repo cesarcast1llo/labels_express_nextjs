@@ -3,21 +3,22 @@ import Contact from './Contact';
 
 function Form(): JSX.Element {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const contactForm = useRef<HTMLDivElement>(null);
+    const contactFormRef = useRef<HTMLDivElement>(null);
 
     const toggle = (): void => {
         setIsOpen(!isOpen);
     };
 
     const handleToggle = (): void => {
-        const content = contactForm.current;
-        if (content) {
+        const contactForm = contactFormRef.current;
+
+        if (contactForm) {
             if (isOpen) {
-                content.style.transition = 'transform .5s ease-out';
-                content.style.transform = 'scaleY(0)';
+                contactForm.classList.add('sliderAnimationClose');
+                contactForm.classList.remove('sliderAnimationOpen');
             } else {
-                content.style.transition = 'transform 0.5s ease-out';
-                content.style.transform = 'scaleY(1)';
+                contactForm.classList.add('sliderAnimationOpen');
+                contactForm.classList.remove('sliderAnimationClose');
             }
         }
         toggle();
@@ -28,14 +29,7 @@ function Form(): JSX.Element {
             <button className="toggleBtn" onClick={handleToggle}>
                 Create Label
             </button>
-            <div
-                ref={contactForm}
-                style={{
-                    transformOrigin: 'top',
-                    overflow: 'hidden',
-                    transform: 'scaleY(0)',
-                }}
-            >
+            <div ref={contactFormRef} className="sliderAnimationClose">
                 {isOpen && <Contact />}
             </div>
         </div>

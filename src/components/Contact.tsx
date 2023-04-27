@@ -22,11 +22,11 @@ const Contact = () => {
     const minutes = date.getMinutes();
     const ampm = hours >= 12 ? 'PM' : 'AM';
     const displayHours = hours % 12 || 12;
-    const actualDate = `${date.getMonth() + 1}&#47;${date.getDate()}&#47;${date.getFullYear()}`;
+    const actualDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
     const timeString = `${displayHours}:${minutes} ${ampm} on ${actualDate}`;
 
     const toggleUPS = () => {
-        setIsUPSLabel(!isUPSLabel);
+        setIsUPSLabel((isUPSLabel) => !isUPSLabel);
     };
 
     const openUPS = () => {
@@ -45,20 +45,20 @@ const Contact = () => {
         toggleUPS();
     };
 
+    const handleWeightInput = (event: Event) => {
+        const weightInput = event.target as HTMLInputElement;
+        const weight = parseInt(weightInput.value, 10);
+        const { crossPrice, newPrice } = getPrice(weight, isUPSLabel, weightUnits);
+        setCrossPrice(crossPrice);
+        setPrice(newPrice);
+    };
+
     const handleWeightUnitsChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setWeightUnits(event.target.value);
     };
 
     useEffect(() => {
         const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
-
-        function handleWeightInput() {
-            const weight = parseInt(weightInput.value, 10);
-            const { crossPrice, newPrice } = getPrice(weight, isUPSLabel, weightUnits);
-            setCrossPrice(crossPrice);
-            setPrice(newPrice);
-        }
-
         weightInput.addEventListener('input', handleWeightInput);
 
         return () => {
@@ -79,10 +79,9 @@ const Contact = () => {
 
         const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
         const emailInput = formRef.current?.elements.namedItem('email') as HTMLInputElement;
-        const priceInput = document.getElementById('priceSentEmailjs') as HTMLParagraphElement;
-        const weight = weightInput.value;
-        const email = emailInput.value;
-        const pricePayment = priceInput.textContent;
+        const pricePayment = document.getElementById('priceSentEmailjs')?.textContent;
+        const weight = weightInput?.value || '0';
+        const email = emailInput?.value || '';
 
         emailjs.sendForm(emailjsServiceId, emailjsTemplateId, formRef.current!, emailjsPublicKey).then(
             (result) => {

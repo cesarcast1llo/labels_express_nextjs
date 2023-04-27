@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from '../../prices.json';
+import $ from '../../../prices.json';
 
 const UPS = () => {
     return (

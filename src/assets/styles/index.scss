@@ -69,14 +69,14 @@ input {
     }
 }
 
-// UPS animation
-.upsAnimationClose {
+// Slider animation
+.sliderAnimationClose {
     transform-origin: top;
     overflow: hidden;
     transition: transform 0.5s ease-out;
     transform: scaleY(0) !important;
 }
-.upsAnimationOpen {
+.sliderAnimationOpen {
     transform-origin: top;
     transition: transform 0.5s ease-in;
     transform: scaleY(1) !important;

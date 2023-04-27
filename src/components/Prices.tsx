@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import UPS from './UPS';
-import USPS from './USPS';
+import UPS from './Data/UPS';
+import USPS from './Data/USPS';
 import Image from 'next/image';
 import UPSImg from '../assets/images/ups.svg';
 import USPSImg from '../assets/images/usps.svg';
