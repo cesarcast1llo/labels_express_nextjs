@@ -59,20 +59,18 @@ const Contact = () => {
 
     useEffect(() => {
         const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
+        const weightElement = formRef.current?.elements.namedItem('weight');
         weightInput.addEventListener('input', handleWeightInput);
 
-        return () => {
-            weightInput.removeEventListener('input', handleWeightInput);
-        };
-    }, [isUPSLabel, weightUnits]);
-
-    useEffect(() => {
-        const weightElement = formRef.current?.elements.namedItem('weight');
         const weightValue = weightElement && 'value' in weightElement ? weightElement.value : '0';
         const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPSLabel, weightUnits);
         setCrossPrice(crossPrice);
         setPrice(newPrice);
-    }, [isUPSLabel, weightUnits]);
+
+        return () => {
+            weightInput.removeEventListener('input', handleWeightInput);
+        };
+    }, [formRef, isUPSLabel, weightUnits]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
