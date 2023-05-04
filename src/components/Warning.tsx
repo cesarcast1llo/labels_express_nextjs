@@ -5,7 +5,14 @@ const Warning = () => {
         <>
             <div className="warning">
                 <div className="warnWrapper">
-                    <p>UPS API is currently down</p>
+                    <p>
+                        UPS & USPS are currently down, <br className="hide" />
+                        feel free to contact&nbsp;
+                        <a href="sms:5109454950">
+                            <span>510-945-4590</span>{' '}
+                        </a>
+                        for more&nbsp;info
+                    </p>
                 </div>
             </div>
         </>
