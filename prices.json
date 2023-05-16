@@ -16,19 +16,19 @@
             "newPrice": "$7"
         },
         "nineToThirty": {
-            "crossPrice": "<s>$16</s>",
+            "crossPrice": "<s>$13</s>",
             "newPrice": "$8"
         },
         "threeOneFifty": {
-            "crossPrice": "<s>$18</s>",
+            "crossPrice": "<s>$15</s>",
             "newPrice": "$9"
         },
         "fiftyOneSeventy": {
-            "crossPrice": "<s>$23</s>",
+            "crossPrice": "<s>$17</s>",
             "newPrice": "$10"
         },
         "seventyOneTwoOne": {
-            "crossPrice": "<s>$27</s>",
+            "crossPrice": "<s>$19</s>",
             "newPrice": "$11"
         },
         "error": {
@@ -47,23 +47,23 @@
         ],
         "uspsFirstClass": {
             "crossPrice": "<s>$7</s>",
-            "newPrice": "$3.5"
+            "newPrice": "$4.5"
         },
         "oneToEight": {
             "crossPrice": "<s>$12</s>",
-            "newPrice": "$7"
-        },
-        "nineToThirty": {
-            "crossPrice": "<s>$15</s>",
-            "newPrice": "$9"
-        },
-        "threeOneFifty": {
-            "crossPrice": "<s>$16</s>",
             "newPrice": "$10"
         },
-        "fiftyOneSeventy": {
-            "crossPrice": "<s>$19</s>",
+        "nineToThirty": {
+            "crossPrice": "<s>$14</s>",
             "newPrice": "$11"
+        },
+        "threeOneFifty": {
+            "crossPrice": "<s>$15</s>",
+            "newPrice": "$12"
+        },
+        "fiftyOneSeventy": {
+            "crossPrice": "<s>$17</s>",
+            "newPrice": "$13"
         },
         "error": {
             "crossPrice": "",

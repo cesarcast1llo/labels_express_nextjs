@@ -58,7 +58,7 @@ const UPS = () => {
                         <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>$21</p>
+                        <p>$18</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -66,7 +66,7 @@ const UPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$23</p>
+                        <p>$20</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -74,7 +74,7 @@ const UPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>$25</p>
+                        <p>$22</p>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@ const UPS = () => {
                         <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>$13</p>
+                        <p>$10</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -95,7 +95,7 @@ const UPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$15</p>
+                        <p>$11</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -103,7 +103,7 @@ const UPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>$17</p>
+                        <p>$12</p>
                     </div>
                 </div>
             </div>
