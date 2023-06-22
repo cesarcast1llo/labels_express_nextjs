@@ -71,7 +71,7 @@ const USPS = () => {
                         <p>0 Oz - 15 Oz</p>
                     </div>
                     <div className="price">
-                        <p>$3.5</p>
+                        <p>$5</p>
                     </div>
                 </div>
             </div>
