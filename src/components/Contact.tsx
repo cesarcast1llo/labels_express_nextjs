@@ -29,29 +29,29 @@ const Contact = () => {
     const handleWeightInput = (event: Event) => {
         const weightInput = event.target as HTMLInputElement;
         const weight = parseInt(weightInput.value, 10);
-        const { crossPrice, newPrice } = getPrice(weight, isUPSLabel, weightUnits);
+        const { crossPrice, newPrice } = getPrice(weight);
         setCrossPrice(crossPrice);
         setPrice(newPrice);
     };
 
-    const handleWeightUnitsChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setWeightUnits(event.target.value);
-    };
+    // const handleWeightUnitsChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    //     setWeightUnits(event.target.value);
+    // };
 
-    useEffect(() => {
-        const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
-        const weightElement = formRef.current?.elements.namedItem('weight');
-        weightInput.addEventListener('input', handleWeightInput);
+    // useEffect(() => {
+    //     const weightInput = formRef.current?.elements.namedItem('weight') as HTMLInputElement;
+    //     const weightElement = formRef.current?.elements.namedItem('weight');
+    //     weightInput.addEventListener('input', handleWeightInput);
 
-        const weightValue = weightElement && 'value' in weightElement ? weightElement.value : '0';
-        const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPSLabel, weightUnits);
-        setCrossPrice(crossPrice);
-        setPrice(newPrice);
+    //     const weightValue = weightElement && 'value' in weightElement ? weightElement.value : '0';
+    //     const { crossPrice, newPrice } = getPrice(parseInt(weightValue, 10), isUPSLabel, weightUnits);
+    //     setCrossPrice(crossPrice);
+    //     setPrice(newPrice);
 
-        return () => {
-            weightInput.removeEventListener('input', handleWeightInput);
-        };
-    }, [formRef, isUPSLabel, weightUnits]);
+    //     return () => {
+    //         weightInput.removeEventListener('input', handleWeightInput);
+    //     };
+    // }, [formRef, isUPSLabel, weightUnits]);
 
     const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -95,12 +95,12 @@ const Contact = () => {
         <form ref={formRef} onSubmit={sendEmail} className="form">
             <ShippingInfoForm />
             <ShipperDropDown />
-            <div className="labelContact weight">
+            {/* <div className="labelContact weight">
                 <div className="weightInput">
                     <label htmlFor="weight">
                         <p>Weight:</p>
                     </label>
-                    {/* <input type="number" name="weight" required value={weightUnits} onChange={handleWeightUnitsChange} /> */}
+                    <input type="number" name="weight" required value={weightUnits} onChange={handleWeightUnitsChange} />
                     <input type="number" name="weight" required />
                     <p>&nbsp;lbs</p>
                 </div>
@@ -114,7 +114,7 @@ const Contact = () => {
                     <p id="timeStampSentEmailjs" dangerouslySetInnerHTML={{ __html: timeString }} />
                     <textarea id="timeStampTextArea" name="timestamp" />
                 </div>
-            </div>
+            </div> */}
             <div className="labelContact">
                 <label htmlFor="email">
                     <p>Provide email to&nbsp;deliver&nbsp;label:</p>

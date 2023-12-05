@@ -7,7 +7,7 @@ const ShipperDropDown = () => {
     const [isUPSLabel, setIsUPSLabel] = useState(false);
     const upsCheckRef = useRef<HTMLDivElement>(null);
 
-    const handleDropdownChange = (e) => {
+    const handleDropdownChange = (e: { target: { value: any } }) => {
         const selectedValue = e.target.value;
         setSelectedOption(selectedValue);
 
@@ -30,6 +30,7 @@ const ShipperDropDown = () => {
             if (isUPSLabel) {
                 upsSliderDiv.classList.add('upsAnimationClose');
                 upsSliderDiv.classList.remove('upsAnimationOpen');
+                // sliderAnimationOpen
             } else {
                 upsSliderDiv.classList.add('upsAnimationOpen');
                 upsSliderDiv.classList.remove('upsAnimationClose');

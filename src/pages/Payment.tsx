@@ -33,7 +33,7 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
         <PageSkeleton firstPage="Home" secondPage="FAQ">
             <div className="paymentPage">
                 {/* <div className="flex">Drop down of prices</div> */}
-                {weight && (
+                {/* {weight && (
                     <div className="paymentType mobBorder">
                         <div className="totalPrice">
                             <h2>Weight:</h2>
@@ -44,7 +44,7 @@ const Payment: React.FC<PaymentProps> = ({ recipient }) => {
                             <p dangerouslySetInnerHTML={{ __html: price }}></p>
                         </div>
                     </div>
-                )}
+                )} */}
                 <div className="paymentType">
                     <div className="payments">
                         <a href={venmoURL} target="_blank">
