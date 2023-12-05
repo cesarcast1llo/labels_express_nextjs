@@ -1,1 +1,541 @@
-h2{font-size:20px;line-height:24px;font-weight:700;color:#feffff;margin:0;letter-spacing:.5px}@media(min-width: 480px){h2{font-size:22px;line-height:26px}}h2 sup{font-size:11px}p,body .labelsExpress .menu a{color:silver;font-size:18px;line-height:22px;letter-spacing:.5px;margin:0}@media(min-width: 480px){p,body .labelsExpress .menu a{font-size:20px;line-height:24px}}label{color:silver;font-size:14px;line-height:18px}input{display:block;width:96%;margin:5px 0 10px;border-radius:5px;padding:5px 3px;border:0}@media(min-width: 480px){input{width:98%}}.show-sm{display:block !important}@media(min-width: 375px){.show-sm{display:none !important}}.hide{display:none !important}@media(min-width: 600px){.hide{display:block !important}}.sliderAnimationClose{transform-origin:top;overflow:hidden;transition:transform .5s ease-out;transform:scaleY(0) !important}.sliderAnimationOpen{transform-origin:top;transition:transform .5s ease-in;transform:scaleY(1) !important}.hideFlex{display:none !important}@media(min-width: 600px){.hideFlex{display:flex !important;justify-content:space-between !important}}body{margin:0;background-color:#1f1e2c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body code{font-family:source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace}body .labelsExpress{text-align:center;margin:0 auto;vertical-align:middle;max-width:800px;background-color:#1f1e2c;padding:5%}body .labelsExpress .warning{padding:0 20px 25px 20px}@media(min-width: 480px){body .labelsExpress .warning{padding:0 30px 20px 30px}}body .labelsExpress .warning .warnWrapper{background-color:#ff6f00;border-radius:8px;padding:10px}body .labelsExpress .warning .warnWrapper p,body .labelsExpress .warning .warnWrapper .menu a,body .labelsExpress .menu .warning .warnWrapper a{font-size:16px;line-height:20px;color:#fff;font-weight:700}body .labelsExpress .menu{padding:25px 20px;display:flex;justify-content:space-around}@media(min-width: 480px){body .labelsExpress .menu{padding:40px 30px}}body .labelsExpress .menu a{font-weight:700;letter-spacing:.05px;background-color:rgba(0,0,0,0);border-radius:8px;border:2px solid silver;text-decoration:none;padding:8px 0;width:100px}@media(min-width: 480px){body .labelsExpress .menu a{width:120px}}body .labelsExpress .menu a:hover{background-color:#195df0;color:silver;border-color:silver}body .labelsExpress .wrapper{border:1px solid #195df0;border-radius:5px;padding-bottom:40px}body .labelsExpress .wrapper .paymentPage{padding:25px 30px 0}body .labelsExpress .wrapper .paymentPage .paymentType{display:block}@media(min-width: 480px){body .labelsExpress .wrapper .paymentPage .paymentType{display:flex;vertical-align:middle;justify-content:space-evenly}}body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice{display:block;padding-bottom:15px}@media(min-width: 480px){body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice{border-bottom:1px solid #fff;padding:10px}}body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice h2{padding-right:10px;display:inline-block}body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice p,body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice .menu a,body .labelsExpress .menu .wrapper .paymentPage .paymentType .totalPrice a{padding:0;display:inline-block}body .labelsExpress .wrapper .paymentPage .paymentType .payments{padding:25px 0 25px}body .labelsExpress .wrapper .paymentPage .paymentType .payments a{text-decoration-color:silver}body .labelsExpress .wrapper .paymentPage .paymentType .payments a p,body .labelsExpress .wrapper .paymentPage .paymentType .payments a .menu a,body .labelsExpress .menu .wrapper .paymentPage .paymentType .payments a a{padding:0}body .labelsExpress .wrapper .paymentPage .paymentType .payments a .cashapp{padding-top:15px}body .labelsExpress .wrapper .paymentPage .contactMe{padding-top:15px}body .labelsExpress .wrapper .paymentPage .contactMe a{text-decoration:none}body .labelsExpress .wrapper .paymentPage .contactMe span{padding-top:5px;text-decoration:underline;white-space:nowrap}body .labelsExpress .wrapper .paymentPage .mobBorder{border-bottom:1px solid #fff;padding-bottom:15px}@media(min-width: 480px){body .labelsExpress .wrapper .paymentPage .mobBorder{border:none}}body .labelsExpress .wrapper .paymentPage p,body .labelsExpress .wrapper .paymentPage .menu a,body .labelsExpress .menu .wrapper .paymentPage a{padding-top:15px}body .labelsExpress .wrapper .labelOptions{display:block;padding:10px 20px 0}@media(min-width: 600px){body .labelsExpress .wrapper .labelOptions{padding:30px 30px 0}}body .labelsExpress .wrapper .labelOptions .switch{position:relative;display:inline-block;width:60px;height:34px;margin-bottom:25px}body .labelsExpress .wrapper .labelOptions .switch input{opacity:0;width:0;height:0}body .labelsExpress .wrapper .labelOptions .switch .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;-webkit-transition:.4s;transition:.4s}body .labelsExpress .wrapper .labelOptions .switch .slider:before{position:absolute;content:"";height:26px;width:26px;left:4px;bottom:4px;background-color:#fff;-webkit-transition:.4s;transition:.4s}body .labelsExpress .wrapper .labelOptions .switch input:checked+.slider{background-color:#2196f3}body .labelsExpress .wrapper .labelOptions .switch input:focus+.slider{box-shadow:0 0 10px #2196f3}body .labelsExpress .wrapper .labelOptions .switch input:checked+.slider:before{-webkit-transform:translateX(26px);-ms-transform:translateX(26px);transform:translateX(26px)}body .labelsExpress .wrapper .labelOptions .switch .slider.round{border-radius:34px}body .labelsExpress .wrapper .labelOptions .switch .slider.round:before{border-radius:50%}body .labelsExpress .wrapper .labelOptions img{padding-bottom:25px;margin:0 auto}body .labelsExpress .wrapper .labelOptions .priorityMail,body .labelsExpress .wrapper .labelOptions .prioritySignature,body .labelsExpress .wrapper .labelOptions .firstClass,body .labelsExpress .wrapper .labelOptions .upsGround,body .labelsExpress .wrapper .labelOptions .upsNextDay,body .labelsExpress .wrapper .labelOptions .upsSecondDay{padding-bottom:15px}body .labelsExpress .wrapper .labelOptions .subhead{text-align:center;padding-bottom:10px}body .labelsExpress .wrapper .labelOptions .priceWrapper{display:flex;justify-content:space-between}body .labelsExpress .wrapper .labelOptions .priceWrapper .price{padding-bottom:5px}body .labelsExpress .wrapper .labelOptions .priceWrapper .price:last-child{font-style:italic}@media(min-width: 600px){body .labelsExpress .wrapper .labelOptions{display:none}}body .labelsExpress .wrapper .prices{display:none}@media(min-width: 600px){body .labelsExpress .wrapper .prices{display:flex;justify-content:space-between}}body .labelsExpress .wrapper .prices .uspsLogo,body .labelsExpress .wrapper .prices .upsLogo{margin:0 auto;padding-bottom:15px}body .labelsExpress .wrapper .prices .usps,body .labelsExpress .wrapper .prices .ups{display:block;padding:0 30px;margin:0 auto}@media(min-width: 600px){body .labelsExpress .wrapper .prices .usps,body .labelsExpress .wrapper .prices .ups{width:50%}}body .labelsExpress .wrapper .prices .usps .priorityMail,body .labelsExpress .wrapper .prices .usps .prioritySignature,body .labelsExpress .wrapper .prices .usps .firstClass,body .labelsExpress .wrapper .prices .usps .upsGround,body .labelsExpress .wrapper .prices .usps .upsNextDay,body .labelsExpress .wrapper .prices .usps .upsSecondDay,body .labelsExpress .wrapper .prices .ups .priorityMail,body .labelsExpress .wrapper .prices .ups .prioritySignature,body .labelsExpress .wrapper .prices .ups .firstClass,body .labelsExpress .wrapper .prices .ups .upsGround,body .labelsExpress .wrapper .prices .ups .upsNextDay,body .labelsExpress .wrapper .prices .ups .upsSecondDay{padding-bottom:15px}body .labelsExpress .wrapper .prices .usps .subhead,body .labelsExpress .wrapper .prices .ups .subhead{text-align:center;padding-bottom:10px}body .labelsExpress .wrapper .prices .usps .priceWrapper,body .labelsExpress .wrapper .prices .ups .priceWrapper{display:flex;justify-content:space-between}body .labelsExpress .wrapper .prices .usps .priceWrapper .price,body .labelsExpress .wrapper .prices .ups .priceWrapper .price{padding-bottom:5px}body .labelsExpress .wrapper .prices .usps .priceWrapper .price:last-child,body .labelsExpress .wrapper .prices .ups .priceWrapper .price:last-child{font-style:italic}body .labelsExpress .wrapper .labelWrap{padding:30px 20px 0}@media(min-width: 600px){body .labelsExpress .wrapper .labelWrap{padding:30px 30px 0}}body .labelsExpress .wrapper .labelWrap .toggleBtn,body .labelsExpress .wrapper .labelWrap .form button{width:100%;background-color:#195df0;color:#feffff;font-weight:bold;padding:10px 20px;font-size:18px;line-height:22px;border-radius:8px;border:0;cursor:pointer}body .labelsExpress .wrapper .labelWrap .form .labelInfo{padding-top:25px;display:flex;justify-content:space-between}body .labelsExpress .wrapper .labelWrap .form .labelInfo .sender,body .labelsExpress .wrapper .labelWrap .form .labelInfo .receiver{text-align:left;width:48%}body .labelsExpress .wrapper .labelWrap .form .labelInfo .sender .onCompleteApi input,body .labelsExpress .wrapper .labelWrap .form .labelInfo .receiver .onCompleteApi input{box-sizing:"border-box";border:"1px solid transparent";width:"240px";height:"32px";padding:"0 12px";border-radius:"3px";box-shadow:"0 2px 6px rgba(0; 0; 0; 0.3)";font-size:"14px";outline:"none";text-overflow:"ellipses"}body .labelsExpress .wrapper .labelWrap .form .labelInfo .sender{padding-right:5%}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps{padding-top:15px;width:100%}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .checkBox{display:flex;justify-content:space-evenly}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .checkBox .upsLabel{display:inline-block;padding:0 10px}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .checkBox .upsCheckbox{display:inline-block;width:20px;margin:0}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .toggleClass{padding:15px 0 10px}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .upsDimensionsLabel{text-align:center}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .upsLabelDimensions{display:flex;justify-content:space-evenly;padding-top:10px}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .upsLabelDimensions p,body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .upsLabelDimensions .menu a,body .labelsExpress .menu .wrapper .labelWrap .form .upsOrUsps .upsLabelDimensions a{font-size:14px;line-height:18px}body .labelsExpress .wrapper .labelWrap .form .upsOrUsps .upsLabelDimensions .upsInput{margin:0 5px;display:inline-block;text-align:center;width:40px;font-size:12px}body .labelsExpress .wrapper .labelWrap .form .labelContact{padding-top:15px}body .labelsExpress .wrapper .labelWrap .form .labelContact input{padding:5px 0 5px 10px;margin-top:5px;width:97.5%}@media(min-width: 600px){body .labelsExpress .wrapper .labelWrap .form .labelContact input{width:98.5%}}body .labelsExpress .wrapper .labelWrap .form .weight{display:block}@media(min-width: 600px){body .labelsExpress .wrapper .labelWrap .form .weight{display:flex;justify-content:space-between}}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput{display:flex;justify-content:center}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput p,body .labelsExpress .wrapper .labelWrap .form .weight .weightInput .menu a,body .labelsExpress .menu .wrapper .labelWrap .form .weight .weightInput a{padding-right:10px}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput p#timeStampSentEmailjs,body .labelsExpress .wrapper .labelWrap .form .weight .weightInput .menu a#timeStampSentEmailjs,body .labelsExpress .menu .wrapper .labelWrap .form .weight .weightInput a#timeStampSentEmailjs{display:none !important}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput textarea{display:none}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput input{width:40px;text-align:center;font-size:12px;line-height:15px;padding:0}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput s{background-color:red;color:#fff;padding:3px 5px;border-radius:8px;font-size:16px;margin-right:5px}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput .lbs{padding:0 0 0 5px}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput input{margin:0;width:70px}body .labelsExpress .wrapper .labelWrap .form .weight .weightInput:first-child{padding-bottom:15px}@media(min-width: 600px){body .labelsExpress .wrapper .labelWrap .form .weight .weightInput:first-child{padding-bottom:0}}body .labelsExpress .wrapper .labelWrap .form button{margin-top:15px}/*# sourceMappingURL=index.css.map */
+h2 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #feffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+@media (min-width: 480px) {
+    h2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+}
+h2 sup {
+    font-size: 11px;
+}
+p,
+body .labelsExpress .menu a {
+    color: silver;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+@media (min-width: 480px) {
+    p,
+    body .labelsExpress .menu a {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+label {
+    color: silver;
+    font-size: 14px;
+    line-height: 18px;
+}
+input {
+    display: block;
+    width: 96%;
+    margin: 5px 0 10px;
+    border-radius: 5px;
+    padding: 5px 3px;
+    border: 0;
+}
+@media (min-width: 480px) {
+    input {
+        width: 98%;
+    }
+}
+.show-sm {
+    display: block !important;
+}
+@media (min-width: 375px) {
+    .show-sm {
+        display: none !important;
+    }
+}
+.hide {
+    display: none !important;
+}
+@media (min-width: 600px) {
+    .hide {
+        display: block !important;
+    }
+}
+.sliderAnimationClose {
+    transform-origin: top;
+    overflow: hidden;
+    transition: transform 0.5s ease-out;
+    transform: scaleY(0) !important;
+}
+.sliderAnimationOpen {
+    transform-origin: top;
+    transition: transform 0.5s ease-in;
+    transform: scaleY(1) !important;
+}
+.hideFlex {
+    display: none !important;
+}
+@media (min-width: 600px) {
+    .hideFlex {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+}
+body {
+    margin: 0;
+    background-color: #1f1e2c;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+body .labelsExpress {
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+    max-width: 800px;
+    background-color: #1f1e2c;
+    padding: 5%;
+}
+body .labelsExpress .warning {
+    padding: 0 20px 25px 20px;
+}
+@media (min-width: 480px) {
+    body .labelsExpress .warning {
+        padding: 0 30px 20px 30px;
+    }
+}
+body .labelsExpress .warning .warnWrapper {
+    background-color: #ff6f00;
+    border-radius: 8px;
+    padding: 10px;
+}
+body .labelsExpress .warning .warnWrapper p,
+body .labelsExpress .warning .warnWrapper .menu a,
+body .labelsExpress .menu .warning .warnWrapper a {
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: 700;
+}
+body .labelsExpress .menu {
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-around;
+}
+@media (min-width: 480px) {
+    body .labelsExpress .menu {
+        padding: 40px 30px;
+    }
+}
+body .labelsExpress .menu a {
+    font-weight: 700;
+    letter-spacing: 0.05px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    border: 2px solid silver;
+    text-decoration: none;
+    padding: 8px 0;
+    width: 100px;
+}
+@media (min-width: 480px) {
+    body .labelsExpress .menu a {
+        width: 120px;
+    }
+}
+body .labelsExpress .menu a:hover {
+    background-color: #195df0;
+    color: silver;
+    border-color: silver;
+}
+body .labelsExpress .wrapper {
+    border: 1px solid #195df0;
+    border-radius: 5px;
+    padding-bottom: 40px;
+}
+body .labelsExpress .wrapper .paymentPage {
+    padding: 25px 30px 0;
+}
+body .labelsExpress .wrapper .paymentPage .paymentType {
+    display: block;
+}
+@media (min-width: 480px) {
+    body .labelsExpress .wrapper .paymentPage .paymentType {
+        display: flex;
+        vertical-align: middle;
+        justify-content: space-evenly;
+    }
+}
+body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice {
+    display: block;
+    padding-bottom: 15px;
+}
+@media (min-width: 480px) {
+    body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice {
+        border-bottom: 1px solid #fff;
+        padding: 10px;
+    }
+}
+body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice h2 {
+    padding-right: 10px;
+    display: inline-block;
+}
+body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice p,
+body .labelsExpress .wrapper .paymentPage .paymentType .totalPrice .menu a,
+body .labelsExpress .menu .wrapper .paymentPage .paymentType .totalPrice a {
+    padding: 0;
+    display: inline-block;
+}
+body .labelsExpress .wrapper .paymentPage .paymentType .payments {
+    padding: 25px 0 25px;
+}
+body .labelsExpress .wrapper .paymentPage .paymentType .payments a {
+    text-decoration-color: silver;
+}
+body .labelsExpress .wrapper .paymentPage .paymentType .payments a p,
+body .labelsExpress .wrapper .paymentPage .paymentType .payments a .menu a,
+body .labelsExpress .menu .wrapper .paymentPage .paymentType .payments a a {
+    padding: 0;
+}
+body .labelsExpress .wrapper .paymentPage .paymentType .payments a .cashapp {
+    padding-top: 15px;
+}
+body .labelsExpress .wrapper .paymentPage .contactMe {
+    padding-top: 15px;
+}
+body .labelsExpress .wrapper .paymentPage .contactMe a {
+    text-decoration: none;
+}
+body .labelsExpress .wrapper .paymentPage .contactMe span {
+    padding-top: 5px;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+body .labelsExpress .wrapper .paymentPage .mobBorder {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 15px;
+}
+@media (min-width: 480px) {
+    body .labelsExpress .wrapper .paymentPage .mobBorder {
+        border: none;
+    }
+}
+body .labelsExpress .wrapper .paymentPage p,
+body .labelsExpress .wrapper .paymentPage .menu a,
+body .labelsExpress .menu .wrapper .paymentPage a {
+    padding-top: 15px;
+}
+body .labelsExpress .wrapper .labelOptions {
+    display: block;
+    padding: 10px 20px 0;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .labelOptions {
+        padding: 30px 30px 0;
+    }
+}
+body .labelsExpress .wrapper .labelOptions .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-bottom: 25px;
+}
+body .labelsExpress .wrapper .labelOptions .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+body .labelsExpress .wrapper .labelOptions .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+body .labelsExpress .wrapper .labelOptions .switch .slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+body .labelsExpress .wrapper .labelOptions .switch input:checked + .slider {
+    background-color: #2196f3;
+}
+body .labelsExpress .wrapper .labelOptions .switch input:focus + .slider {
+    box-shadow: 0 0 10px #2196f3;
+}
+body .labelsExpress .wrapper .labelOptions .switch input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+body .labelsExpress .wrapper .labelOptions .switch .slider.round {
+    border-radius: 34px;
+}
+body .labelsExpress .wrapper .labelOptions .switch .slider.round:before {
+    border-radius: 50%;
+}
+body .labelsExpress .wrapper .labelOptions img {
+    padding-bottom: 25px;
+    margin: 0 auto;
+}
+body .labelsExpress .wrapper .labelOptions .priorityMail,
+body .labelsExpress .wrapper .labelOptions .prioritySignature,
+body .labelsExpress .wrapper .labelOptions .firstClass,
+body .labelsExpress .wrapper .labelOptions .upsGround,
+body .labelsExpress .wrapper .labelOptions .upsNextDay,
+body .labelsExpress .wrapper .labelOptions .upsSecondDay {
+    padding-bottom: 15px;
+}
+body .labelsExpress .wrapper .labelOptions .subhead {
+    text-align: center;
+    padding-bottom: 10px;
+}
+body .labelsExpress .wrapper .labelOptions .priceWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+body .labelsExpress .wrapper .labelOptions .priceWrapper .price {
+    padding-bottom: 5px;
+}
+body .labelsExpress .wrapper .labelOptions .priceWrapper .price:last-child {
+    font-style: italic;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .labelOptions {
+        display: none;
+    }
+}
+body .labelsExpress .wrapper .prices {
+    display: none;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .prices {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+body .labelsExpress .wrapper .prices .uspsLogo,
+body .labelsExpress .wrapper .prices .upsLogo {
+    margin: 0 auto;
+    padding-bottom: 15px;
+}
+body .labelsExpress .wrapper .prices .usps,
+body .labelsExpress .wrapper .prices .ups {
+    display: block;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .prices .usps,
+    body .labelsExpress .wrapper .prices .ups {
+        width: 50%;
+    }
+}
+body .labelsExpress .wrapper .prices .usps .priorityMail,
+body .labelsExpress .wrapper .prices .usps .prioritySignature,
+body .labelsExpress .wrapper .prices .usps .firstClass,
+body .labelsExpress .wrapper .prices .usps .upsGround,
+body .labelsExpress .wrapper .prices .usps .upsNextDay,
+body .labelsExpress .wrapper .prices .usps .upsSecondDay,
+body .labelsExpress .wrapper .prices .ups .priorityMail,
+body .labelsExpress .wrapper .prices .ups .prioritySignature,
+body .labelsExpress .wrapper .prices .ups .firstClass,
+body .labelsExpress .wrapper .prices .ups .upsGround,
+body .labelsExpress .wrapper .prices .ups .upsNextDay,
+body .labelsExpress .wrapper .prices .ups .upsSecondDay {
+    padding-bottom: 15px;
+}
+body .labelsExpress .wrapper .prices .usps .subhead,
+body .labelsExpress .wrapper .prices .ups .subhead {
+    text-align: center;
+    padding-bottom: 10px;
+}
+body .labelsExpress .wrapper .prices .usps .priceWrapper,
+body .labelsExpress .wrapper .prices .ups .priceWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+body .labelsExpress .wrapper .prices .usps .priceWrapper .price,
+body .labelsExpress .wrapper .prices .ups .priceWrapper .price {
+    padding-bottom: 5px;
+}
+body .labelsExpress .wrapper .prices .usps .priceWrapper .price:last-child,
+body .labelsExpress .wrapper .prices .ups .priceWrapper .price:last-child {
+    font-style: italic;
+}
+body .labelsExpress .wrapper .labelWrap {
+    padding: 30px 20px 0;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .labelWrap {
+        padding: 30px 30px 0;
+    }
+}
+body .labelsExpress .wrapper .labelWrap .toggleBtn,
+body .labelsExpress .wrapper .labelWrap .form button {
+    width: 100%;
+    background-color: #195df0;
+    color: #feffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+}
+body .labelsExpress .wrapper .labelWrap .form .labelInfo {
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+body .labelsExpress .wrapper .labelWrap .form .labelInfo .sender,
+body .labelsExpress .wrapper .labelWrap .form .labelInfo .receiver {
+    text-align: left;
+    width: 48%;
+}
+body .labelsExpress .wrapper .labelWrap .form .labelInfo .sender .onCompleteApi input,
+body .labelsExpress .wrapper .labelWrap .form .labelInfo .receiver .onCompleteApi input {
+    box-sizing: 'border-box';
+    border: '1px solid transparent';
+    width: '240px';
+    height: '32px';
+    padding: '0 12px';
+    border-radius: '3px';
+    box-shadow: '0 2px 6px rgba(0; 0; 0; 0.3)';
+    font-size: '14px';
+    outline: 'none';
+    text-overflow: 'ellipses';
+}
+body .labelsExpress .wrapper .labelWrap .form .labelInfo .sender {
+    padding-right: 5%;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel {
+    padding-top: 15px;
+    width: 100%;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .checkBox {
+    display: flex;
+    justify-content: space-evenly;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .checkBox .upsLabel {
+    display: inline-block;
+    padding: 0 10px;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .checkBox .upsCheckbox {
+    display: inline-block;
+    width: 20px;
+    margin: 0;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .toggleClass {
+    padding: 15px 0 10px;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .upsDimensionsLabel {
+    text-align: center;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .upsLabelDimensions {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .upsLabelDimensions p,
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .upsLabelDimensions .menu a,
+body .labelsExpress .menu .wrapper .labelWrap .form .typeOfLabel .upsLabelDimensions a {
+    font-size: 14px;
+    line-height: 18px;
+}
+body .labelsExpress .wrapper .labelWrap .form .typeOfLabel .upsLabelDimensions .upsInput {
+    margin: 0 5px;
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    font-size: 12px;
+}
+body .labelsExpress .wrapper .labelWrap .form .labelContact {
+    padding-top: 15px;
+}
+body .labelsExpress .wrapper .labelWrap .form .labelContact input {
+    padding: 5px 0 5px 10px;
+    margin-top: 5px;
+    width: 97.5%;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .labelWrap .form .labelContact input {
+        width: 98.5%;
+    }
+}
+body .labelsExpress .wrapper .labelWrap .form .weight {
+    display: block;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .labelWrap .form .weight {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput {
+    display: flex;
+    justify-content: center;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput p,
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput .menu a,
+body .labelsExpress .menu .wrapper .labelWrap .form .weight .weightInput a {
+    padding-right: 10px;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput p#timeStampSentEmailjs,
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput .menu a#timeStampSentEmailjs,
+body .labelsExpress .menu .wrapper .labelWrap .form .weight .weightInput a#timeStampSentEmailjs {
+    display: none !important;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput textarea {
+    display: none;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput input {
+    width: 40px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput s {
+    background-color: red;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput .lbs {
+    padding: 0 0 0 5px;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput input {
+    margin: 0;
+    width: 70px;
+}
+body .labelsExpress .wrapper .labelWrap .form .weight .weightInput:first-child {
+    padding-bottom: 15px;
+}
+@media (min-width: 600px) {
+    body .labelsExpress .wrapper .labelWrap .form .weight .weightInput:first-child {
+        padding-bottom: 0;
+    }
+}
+body .labelsExpress .wrapper .labelWrap .form button {
+    margin-top: 15px;
+} /*# sourceMappingURL=index.css.map */

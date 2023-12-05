@@ -6,14 +6,14 @@ const UPS = () => {
         <div className="ups">
             <div className="upsGround">
                 <div className="subhead">
-                    <h2>UPS Ground</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: $.ups.options[0] }} />
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
                         <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.ups.oneToEight.newPrice}</p>
+                        <p>{$.ups.ground.oneToFifteen.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -21,7 +21,7 @@ const UPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.ups.nineToThirty.newPrice}</p>
+                        <p>{$.ups.ground.sixteenToFourteeFive.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -29,7 +29,7 @@ const UPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.ups.threeOneFifty.newPrice}</p>
+                        <p>{$.ups.ground.fourteeSixToSeventee.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -37,28 +37,20 @@ const UPS = () => {
                         <p>{$.weights[3]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.ups.fiftyOneSeventy.newPrice}</p>
-                    </div>
-                </div>
-                <div className="priceWrapper">
-                    <div className="price">
-                        <p>{$.weights[4]}</p>
-                    </div>
-                    <div className="price">
-                        <p>{$.ups.seventyOneTwoOne.newPrice}</p>
+                        <p>{$.ups.ground.seventyOneAndUp.newPrice}</p>
                     </div>
                 </div>
             </div>
             <div className="upsNextDay">
                 <div className="subhead">
-                    <h2>UPS Next Day Air</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: $.ups.options[1] }} />
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
                         <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>$18</p>
+                        <p>{$.ups.threeDay.oneToFifteen.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -66,7 +58,7 @@ const UPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$20</p>
+                        <p>{$.ups.threeDay.sixteenToFourteeFive.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -74,20 +66,28 @@ const UPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>$22</p>
+                        <p>{$.ups.threeDay.fourteeSixToSeventee.newPrice}</p>
+                    </div>
+                </div>
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[3]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.ups.threeDay.seventyOneAndUp.newPrice}</p>
                     </div>
                 </div>
             </div>
             <div className="upsSecondDay">
                 <div className="subhead">
-                    <h2>UPS 2nd Day Air</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: $.ups.options[2] }} />
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
                         <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>$10</p>
+                        <p>{$.ups.twoDay.oneToFifteen.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -95,7 +95,7 @@ const UPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$11</p>
+                        <p>{$.ups.twoDay.sixteenToFourteeFive.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -103,7 +103,15 @@ const UPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>$12</p>
+                        <p>{$.ups.twoDay.fourteeSixToSeventee.newPrice}</p>
+                    </div>
+                </div>
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[3]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.ups.twoDay.seventyOneAndUp.newPrice}</p>
                     </div>
                 </div>
             </div>

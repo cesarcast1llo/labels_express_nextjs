@@ -13,7 +13,7 @@ const USPS = () => {
                         <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.usps.oneToEight.newPrice}</p>
+                        <p>{$.usps.priority.oneToFifteen.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -21,7 +21,7 @@ const USPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.usps.nineToThirty.newPrice}</p>
+                        <p>{$.usps.priority.sixteenToFourteeFive.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -29,7 +29,7 @@ const USPS = () => {
                         <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.usps.threeOneFifty.newPrice}</p>
+                        <p>{$.usps.priority.fourteeSixToSeventee.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -37,11 +37,15 @@ const USPS = () => {
                         <p>{$.weights[3]}</p>
                     </div>
                     <div className="price">
-                        <p>{$.usps.fiftyOneSeventy.newPrice}</p>
+                        <p>{$.usps.priority.seventyOneAndUp.newPrice}</p>
                     </div>
                 </div>
+                <div className="priceWrapper">
+                    <div className="price">&nbsp;</div>
+                    <div className="price">&nbsp;</div>
+                </div>
             </div>
-            <div className="prioritySignature">
+            <div className="groundAdv">
                 <div className="subhead">
                     <h2 dangerouslySetInnerHTML={{ __html: $.usps.options[1] }} />
                 </div>
@@ -50,7 +54,7 @@ const USPS = () => {
                         <p>{$.weights[0]}</p>
                     </div>
                     <div className="price">
-                        <p>$9</p>
+                        <p>{$.usps.groundAdv.oneToFifteen.newPrice}</p>
                     </div>
                 </div>
                 <div className="priceWrapper">
@@ -58,25 +62,25 @@ const USPS = () => {
                         <p>{$.weights[1]}</p>
                     </div>
                     <div className="price">
-                        <p>$12</p>
+                        <p>{$.usps.groundAdv.sixteenToFourteeFive.newPrice}</p>
                     </div>
-                </div>
-            </div>
-            <div className="firstClass">
-                <div className="subhead">
-                    <h2 dangerouslySetInnerHTML={{ __html: $.usps.options[2] }} />
                 </div>
                 <div className="priceWrapper">
                     <div className="price">
-                        <p>0 Oz - 15 Oz</p>
+                        <p>{$.weights[2]}</p>
                     </div>
                     <div className="price">
-                        <p>$5</p>
+                        <p>{$.usps.groundAdv.fourteeSixToSeventee.newPrice}</p>
                     </div>
                 </div>
-            </div>
-            <div className="extras">
-                <p style={{ fontSize: 16, lineHeight: '20px' }} dangerouslySetInnerHTML={{ __html: $.usps.extras[0] }} />
+                <div className="priceWrapper">
+                    <div className="price">
+                        <p>{$.weights[3]}</p>
+                    </div>
+                    <div className="price">
+                        <p>{$.usps.groundAdv.seventyOneAndUp.newPrice}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

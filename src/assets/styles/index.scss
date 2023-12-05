@@ -249,7 +249,7 @@ body {
 
                 .priorityMail,
                 .prioritySignature,
-                .firstClass,
+                .groundAdv,
                 .upsGround,
                 .upsNextDay,
                 .upsSecondDay {
@@ -307,7 +307,7 @@ body {
 
                     .priorityMail,
                     .prioritySignature,
-                    .firstClass,
+                    .groundAdv,
                     .upsGround,
                     .upsNextDay,
                     .upsSecondDay {
@@ -386,24 +386,13 @@ body {
                         }
                     }
 
-                    .upsOrUsps {
+                    .typeOfLabel {
                         padding-top: 15px;
                         width: 100%;
 
-                        .checkBox {
-                            display: flex;
-                            justify-content: space-evenly;
-
-                            .upsLabel {
-                                display: inline-block;
-                                padding: 0 10px;
-                            }
-
-                            .upsCheckbox {
-                                display: inline-block;
-                                width: 20px;
-                                margin: 0;
-                            }
+                        select {
+                            padding: 5px;
+                            margin-top: 10px;
                         }
 
                         .toggleClass {
