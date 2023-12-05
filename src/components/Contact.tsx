@@ -29,9 +29,9 @@ const Contact = () => {
     const handleWeightInput = (event: Event) => {
         const weightInput = event.target as HTMLInputElement;
         const weight = parseInt(weightInput.value, 10);
-        const { crossPrice, newPrice } = getPrice(weight);
+        // const { crossPrice, newPrice } = getPrice(weight);
         setCrossPrice(crossPrice);
-        setPrice(newPrice);
+        // setPrice(newPrice);
     };
 
     // const handleWeightUnitsChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
