@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Menu from '@/components/Menu';
-import { Analytics } from '@vercel/analytics/react';
 
 type PageSkeletonProps = React.PropsWithChildren<{
     children: React.ReactNode;
