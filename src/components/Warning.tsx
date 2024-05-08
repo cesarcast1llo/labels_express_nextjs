@@ -6,7 +6,7 @@ const Warning = () => {
             <div className="warning">
                 <div className="warnWrapper">
                     <p>
-                        UPS & USPS are currently down, <br className="hide" />
+                        UPS is currently down until further notice, <br className="hide" />
                         feel free to contact&nbsp;
                         <a href="sms:5109454950">
                             <span>510-945-4590</span>{' '}

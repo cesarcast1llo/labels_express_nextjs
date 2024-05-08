@@ -6,7 +6,7 @@ import Warning from '@/components/Warning';
 export default function Home() {
     return (
         <PageSkeleton firstPage="Payment" secondPage="FAQ">
-            {/* <Warning /> */}
+            <Warning />
             <Prices />
             <Form />
         </PageSkeleton>
